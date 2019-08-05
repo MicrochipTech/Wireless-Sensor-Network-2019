@@ -1,0 +1,101 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<!-- Utils.qml -->
+  <title>Utils QML Type | SAM-BA 3.2</title>
+  <link rel="stylesheet" type="text/css" href="style/style.css" />
+</head>
+<table border="0" cellpadding="0" cellspacing="0" width="100%">
+<tr>
+<td class="postheader" valign="center"> <a href="index.html">Home</a> &middot; </td></tr></table><div class="sidebar">
+<div class="toc">
+<h3><a name="toc">Contents</a></h3>
+<ul>
+<li class="level1"><a href="#methods">Methods</a></li>
+<li class="level1"><a href="#details">Detailed Description</a></li>
+</ul>
+</div>
+<div class="sidebar-content" id="sidebar-content"></div></div>
+<h1 class="title">Utils QML Type</h1>
+<span class="subtitle"></span>
+<!-- $$$Utils-brief -->
+<p>The Utils type is a singleton that contains misc. utility functions. <a href="#details">More...</a></p>
+<!-- @@@Utils -->
+<div class="table"><table class="alignedsummary">
+<tr><td class="memItemLeft rightAlign topAlign"> Import Statement:</td><td class="memItemRight bottomAlign"> import SAMBA 3.2</td></tr></table></div><ul>
+<li><a href="qml-samba-utils-members.html">List of all members, including inherited members</a></li>
+</ul>
+<a name="methods"></a>
+<h2 id="methods">Methods</h2>
+<ul>
+<li class="fn">string <b><b><a href="qml-samba-utils.html#hex-method">hex</a></b></b>(number <i>value</i>, number <i>digits</i>)</li>
+<li class="fn">void <b><b><a href="qml-samba-utils.html#msleep-method">msleep</a></b></b>(int <i>msecs</i>)</li>
+<li class="fn">string <b><b><a href="qml-samba-utils.html#parseInteger-method">parseInteger</a></b></b>(string <i>text</i>)</li>
+<li class="fn">void <b><b><a href="qml-samba-utils.html#sleep-method">sleep</a></b></b>(int <i>secs</i>)</li>
+<li class="fn">void <b><b><a href="qml-samba-utils.html#usleep-method">usleep</a></b></b>(int <i>usecs</i>)</li>
+</ul>
+<!-- $$$Utils-description -->
+<a name="details"></a>
+<h2 id="details">Detailed Description</h2>
+<!-- @@@Utils -->
+<h2>Method Documentation</h2>
+<!-- $$$hex -->
+<div class="qmlitem"><div class="qmlproto">
+<div class="table"><table class="qmlname">
+<tr valign="top" class="odd" id="hex-method">
+<td class="tblQmlFuncNode"><p>
+<a name="hex-method"></a><span class="type">string</span> <span class="name">hex</span>(<span class="type">number</span> <i>value</i>, <span class="type">number</span> <i>digits</i>)</p></td></tr>
+</table></div>
+</div><div class="qmldoc"><p>Convert <i>value</i> to a hexadecimal string with at least <i>digits</i>.</p>
+<p>Returns the hexadecimal string</p>
+</div></div><!-- @@@hex -->
+<br/>
+<!-- $$$msleep -->
+<div class="qmlitem"><div class="qmlproto">
+<div class="table"><table class="qmlname">
+<tr valign="top" class="odd" id="msleep-method">
+<td class="tblQmlFuncNode"><p>
+<a name="msleep-method"></a><span class="type">void</span> <span class="name">msleep</span>(<span class="type">int</span> <i>msecs</i>)</p></td></tr>
+</table></div>
+</div><div class="qmldoc"><p>Pause the current thread for <i>msecs</i> milliseconds.</p>
+</div></div><!-- @@@msleep -->
+<br/>
+<!-- $$$parseInteger -->
+<div class="qmlitem"><div class="qmlproto">
+<div class="table"><table class="qmlname">
+<tr valign="top" class="odd" id="parseInteger-method">
+<td class="tblQmlFuncNode"><p>
+<a name="parseInteger-method"></a><span class="type">string</span> <span class="name">parseInteger</span>(<span class="type">string</span> <i>text</i>)</p></td></tr>
+</table></div>
+</div><div class="qmldoc"><p>Convert <i>decimal</i> or hexadecimal string to a number.</p>
+<p>Returns the parsed number, or Number.NaN if the string could not be parsed.</p>
+</div></div><!-- @@@parseInteger -->
+<br/>
+<!-- $$$sleep -->
+<div class="qmlitem"><div class="qmlproto">
+<div class="table"><table class="qmlname">
+<tr valign="top" class="odd" id="sleep-method">
+<td class="tblQmlFuncNode"><p>
+<a name="sleep-method"></a><span class="type">void</span> <span class="name">sleep</span>(<span class="type">int</span> <i>secs</i>)</p></td></tr>
+</table></div>
+</div><div class="qmldoc"><p>Pause the current thread for <i>secs</i> seconds.</p>
+</div></div><!-- @@@sleep -->
+<br/>
+<!-- $$$usleep -->
+<div class="qmlitem"><div class="qmlproto">
+<div class="table"><table class="qmlname">
+<tr valign="top" class="odd" id="usleep-method">
+<td class="tblQmlFuncNode"><p>
+<a name="usleep-method"></a><span class="type">void</span> <span class="name">usleep</span>(<span class="type">int</span> <i>usecs</i>)</p></td></tr>
+</table></div>
+</div><div class="qmldoc"><p>Pause the current thread for <i>usecs</i> microseconds.</p>
+</div></div><!-- @@@usleep -->
+<br/>
+<p /><address><hr /><div align="center">
+<table width="100%" cellspacing="0" border="0"><tr class="address">
+<td width="60%" align="left">Copyright &copy; 2015-2017 Atmel Corporation</td>
+<td width="40%" align="right"><div align="right">SAM-BA Documentation</div></td>
+</tr></table></div></address></body>
+</html>

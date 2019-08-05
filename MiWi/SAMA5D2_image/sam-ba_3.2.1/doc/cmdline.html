@@ -1,0 +1,211 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<!-- cmdline.qdoc -->
+  <title>SAM-BA Command Line Documentation | SAM-BA 3.2</title>
+  <link rel="stylesheet" type="text/css" href="style/style.css" />
+</head>
+<table border="0" cellpadding="0" cellspacing="0" width="100%">
+<tr>
+<td class="postheader" valign="center"> <a href="index.html">Home</a> &middot; </td></tr></table><li>SAM-BA Command Line Documentation</li>
+<div class="sidebar">
+<div class="toc">
+<h3><a name="toc">Contents</a></h3>
+<ul>
+<li class="level1"><a href="#introduction">Introduction</a></li>
+<li class="level1"><a href="#running-user-scripts">Running User Scripts</a></li>
+<li class="level1"><a href="#monitor-commands">Monitor Commands</a></li>
+<li class="level1"><a href="#applet-commands">Applet Commands</a></li>
+<li class="level2"><a href="#devices-and-boards">Devices and Boards</a></li>
+<li class="level2"><a href="#applets">Applets</a></li>
+<li class="level2"><a href="#common-memory-applet-commands">Common Memory Applet Commands</a></li>
+<li class="level2"><a href="#sama5d2-applet-commands-and-examples">SAMA5D2 Applet Commands and Examples</a></li>
+</ul>
+</div>
+<div class="sidebar-content" id="sidebar-content"></div></div>
+<h1 class="title">SAM-BA Command Line Documentation</h1>
+<span class="subtitle"></span>
+<!-- $$$cmdline.html-description -->
+<div class="descr"> <a name="details"></a>
+<a name="introduction"></a>
+<h2 id="introduction">Introduction</h2>
+<p>SAM-BA includes command line interface that provides support for the most common actions:</p>
+<ul>
+<li>reading / writing to arbitrary memory addresses and/or peripherals</li>
+<li>uploading applets and using them to erase/read/write external memories</li>
+</ul>
+<p>The command line interface is designed to be self-documenting.</p>
+<p>The main commands can be listed using the &quot;<i>sam-ba --help</i>&quot; command:</p>
+<pre class="cpp">Usage: <span class="operator">.</span><span class="operator">/</span>sam<span class="operator">-</span>ba <span class="operator">[</span>options<span class="operator">]</span>
+SAM<span class="operator">-</span>BA Command Line Tool
+
+Options:
+  <span class="operator">-</span>v<span class="operator">,</span> <span class="operator">-</span><span class="operator">-</span>version                          Displays version information<span class="operator">.</span>
+  <span class="operator">-</span>h<span class="operator">,</span> <span class="operator">-</span><span class="operator">-</span>help                             Displays <span class="keyword">this</span> help<span class="operator">.</span>
+  <span class="operator">-</span>x<span class="operator">,</span> <span class="operator">-</span><span class="operator">-</span>execute <span class="operator">&lt;</span>script<span class="operator">.</span>qml<span class="operator">&gt;</span>             Execute script <span class="operator">&lt;</span>script<span class="operator">-</span>file<span class="operator">&gt;</span><span class="operator">.</span>
+  <span class="operator">-</span>p<span class="operator">,</span> <span class="operator">-</span><span class="operator">-</span>port <span class="operator">&lt;</span>port<span class="operator">[</span>:options:<span class="operator">.</span><span class="operator">.</span><span class="operator">.</span><span class="operator">]</span><span class="operator">&gt;</span>        Communicate with device <span class="keyword">using</span> <span class="operator">&lt;</span>port<span class="operator">&gt;</span><span class="operator">.</span>
+  <span class="operator">-</span>d<span class="operator">,</span> <span class="operator">-</span><span class="operator">-</span>device <span class="operator">&lt;</span>device<span class="operator">&gt;</span>                  Connected device is <span class="operator">&lt;</span>device<span class="operator">&gt;</span><span class="operator">.</span>
+  <span class="operator">-</span>b<span class="operator">,</span> <span class="operator">-</span><span class="operator">-</span>board <span class="operator">&lt;</span>board<span class="operator">&gt;</span>                    Connected board is <span class="operator">&lt;</span>board<span class="operator">&gt;</span><span class="operator">.</span>
+  <span class="operator">-</span>m<span class="operator">,</span> <span class="operator">-</span><span class="operator">-</span><span class="keyword">monitor</span> <span class="operator">&lt;</span>command<span class="operator">[</span>:options:<span class="operator">.</span><span class="operator">.</span><span class="operator">.</span><span class="operator">]</span><span class="operator">&gt;</span>  Run <span class="keyword">monitor</span> command <span class="operator">&lt;</span>command<span class="operator">&gt;</span><span class="operator">.</span>
+  <span class="operator">-</span>a<span class="operator">,</span> <span class="operator">-</span><span class="operator">-</span>applet <span class="operator">&lt;</span>applet<span class="operator">[</span>:options:<span class="operator">.</span><span class="operator">.</span><span class="operator">.</span><span class="operator">]</span><span class="operator">&gt;</span>    Load and initialize applet <span class="operator">&lt;</span>applet<span class="operator">&gt;</span><span class="operator">.</span>
+  <span class="operator">-</span>c<span class="operator">,</span> <span class="operator">-</span><span class="operator">-</span>command <span class="operator">&lt;</span>command<span class="operator">[</span>:args:<span class="operator">.</span><span class="operator">.</span><span class="operator">.</span><span class="operator">]</span><span class="operator">&gt;</span>     Run command <span class="operator">&lt;</span>command<span class="operator">&gt;</span><span class="operator">.</span></pre>
+<p>Additional help can be obtained for most commands by supplying a &quot;help&quot; parameter that will display their usage.</p>
+<p>For example &quot;<i>sam-ba --port help</i>&quot; will display:</p>
+<pre class="cpp">Known ports: j<span class="operator">-</span>link<span class="operator">,</span> serial</pre>
+<p>Command that take an argument with options (port, monitor, applet) will display even more documentation when called with &quot;help&quot; as option valu</p>
+<p>For example &quot;<i>sam-ba --port serial:help</i>&quot; will display:</p>
+<pre class="cpp">Syntax: serial:<span class="operator">[</span><span class="operator">&lt;</span>port<span class="operator">&gt;</span><span class="operator">]</span>:<span class="operator">[</span><span class="operator">&lt;</span>baudrate<span class="operator">&gt;</span><span class="operator">]</span>
+Examples: serial <span class="operator">-</span><span class="operator">&gt;</span> serial port (will use first AT91 USB <span class="keyword">if</span> found otherwise first serial port)
+          serial:COM80 <span class="operator">-</span><span class="operator">&gt;</span> serial port on COM80
+          serial:ttyUSB0:<span class="number">57600</span> <span class="operator">-</span><span class="operator">&gt;</span> serial port on <span class="operator">/</span>dev<span class="operator">/</span>ttyUSB0<span class="operator">,</span> baudrate <span class="number">57600</span></pre>
+<a name="running-user-scripts"></a>
+<h2 id="running-user-scripts">Running User Scripts</h2>
+<p>To run user scripts, a single &quot;<i>-x</i>&quot; must be provided on the command line.</p>
+<p>For example: &quot;<i>sam-ba -x myscript.qml</i>&quot;.</p>
+<p>If the script executes without error, the SAM-BA program will return an error code of 0. Otherwise, if a javascript/QML exception occurs, the tool will return 255.</p>
+<p>User script that execute successfully can also override the return code by setting the requested code in &quot;<i>Script.returnCode</i>&quot;. For example, this simple user script will just return with code 42:</p>
+<pre class="qml">import QtQuick 2.3
+<span class="type">Item</span> {
+        <span class="name">Component</span>.onCompleted: {
+                <span class="name">Script</span>.<span class="name">returnCode</span> <span class="operator">=</span> <span class="number">42</span>
+        }
+}</pre>
+<a name="monitor-commands"></a>
+<h2 id="monitor-commands">Monitor Commands</h2>
+<p>We call monitor commands the commands that allow reading and writing from the device address space.</p>
+<p>In this mode, a valid port option (&quot;<i>-p</i>&quot; or &quot;<i>--port</i>&quot;) must be present on the command line. Several monitor commands can be run sequentially in the same command line invokation.</p>
+<p>For example, the following command line will display the CHIPID_CIDR register on a SAMA5D2 device and then read and write into SRAM at address 0x200000:</p>
+<pre class="cpp">sam<span class="operator">-</span>ba <span class="operator">-</span>p serial <span class="operator">-</span>m read32:<span class="number">0xfc069000</span> <span class="operator">-</span>m write32:<span class="number">0x200000</span>:<span class="number">0x12345678</span> <span class="operator">-</span>m read16:<span class="number">0x200000</span> <span class="operator">-</span>m read16:<span class="number">0x200002</span></pre>
+<p>Running this command line with a SAMA5D2 connected will display:</p>
+<pre class="cpp">read32(<span class="number">0xfc069000</span>)<span class="operator">=</span><span class="number">0x8a5c08c0</span>
+write32(<span class="number">0x00200000</span><span class="operator">,</span><span class="number">0x12345678</span>)
+read16(<span class="number">0x200000</span>)<span class="operator">=</span><span class="number">0x5678</span>
+read16(<span class="number">0x200002</span>)<span class="operator">=</span><span class="number">0x1234</span></pre>
+<p>The monitor commands supported may depend on the connection type selected, but usually include:</p>
+<div class="table"><table class="generic">
+ <thead><tr class="qt-style"><th >Command</th><th >1st argument</th><th >2nd argument</th><th >3rd argument</th><th >Description</th></tr></thead>
+<tr valign="top" class="odd"><td >read8</td><td >address</td><td ><i>none</i></td><td ><i>none</i></td><td >Read a byte from <i>address</i></td></tr>
+<tr valign="top" class="even"><td >read16</td><td >address</td><td ><i>none</i></td><td ><i>none</i></td><td >Read a half-word (16-bit) from address <i>address</i></td></tr>
+<tr valign="top" class="odd"><td >read32</td><td >address</td><td ><i>none</i></td><td ><i>none</i></td><td >Read a word (32-bit) from address <i>address</i></td></tr>
+<tr valign="top" class="even"><td >read</td><td >filename</td><td >address</td><td >length</td><td >Read <i>length</i> bytes from address <i>address</i> and write them to file <i>filename</i></td></tr>
+<tr valign="top" class="odd"><td >write8</td><td >address</td><td >value</td><td ><i>none</i></td><td >Write byte <i>value</i> to <i>address</i></td></tr>
+<tr valign="top" class="even"><td >write16</td><td >address</td><td >value</td><td ><i>none</i></td><td >Write half-word <i>value</i> to address <i>address</i></td></tr>
+<tr valign="top" class="odd"><td >write32</td><td >address</td><td >value</td><td ><i>none</i></td><td >Write word <i>value</i> to address <i>address</i></td></tr>
+<tr valign="top" class="even"><td >write</td><td >filename</td><td >address</td><td ><i>none</i></td><td >Read contents of file <i>filename</i> and write it at address <i>address</i></td></tr>
+<tr valign="top" class="odd"><td >execute</td><td >address</td><td ><i>none</i></td><td ><i>none</i></td><td >Execute code at address <i>address</i></td></tr>
+</table></div>
+<p>Address, length and value arguments can be provided in hexadecimal (prefixed with &quot;0x&quot;) or in decimal.</p>
+<a name="applet-commands"></a>
+<h2 id="applet-commands">Applet Commands</h2>
+<p>External memories can be programmed by uploading small programs to the device that are called <i>applets</i> and communicating with them using a shared memory region.</p>
+<p>Running applet commands requires several parameters on the command line:</p>
+<ul>
+<li>a <i>port</i> to connect to the device (option &quot;<i>-p</i>&quot; or &quot;<i>--port</i>&quot;)</li>
+<li>either a <i>device</i> option (option &quot;<i>-d</i>&quot; or &quot;<i>--device</i>&quot;) or a <i>board</i> option (option &quot;<i>-b</i>&quot; or &quot;<i>--board</i>&quot;)</li>
+<li>an <i>applet</i> to use (option &quot;<i>-a</i>&quot; or &quot;<i>--applet</i>&quot;)</li>
+<li>zero or more applet commands to run (option &quot;<i>-c</i>&quot; or &quot;<i>--command</i>&quot;)</li>
+</ul>
+<a name="devices-and-boards"></a>
+<h3 >Devices and Boards</h3>
+<p>The list of supported devices can be displayed by using &quot;<i>sam-ba -d help</i>&quot;. Running this command with SAM-BA 3.2 will display:</p>
+<pre class="cpp">Known devices: sam9xx5<span class="operator">,</span> sama5d2<span class="operator">,</span> sama5d3<span class="operator">,</span> sama5d4<span class="operator">,</span> samv71</pre>
+<p>For ease of use, several aliases are accepted by the tool: for example using &quot;sama5d2&quot; is equivalent to &quot;sama5d27&quot;.</p>
+<p>Boards also select a device, but also a set of settings that are available to the applets. For example, selecting board &quot;<i>sama5d2-xplained</i>&quot; will pre-configure the system for:</p>
+<ul>
+<li>SPI0 IOSET1 NPCS0 66Mhz</li>
+<li>QSPI0 IOSET3 66Mhz</li>
+</ul>
+<p>It is always possible to override/provide applet initialization settings regardless of the configuration set or not by the device/board options.</p>
+<a name="applets"></a>
+<h3 >Applets</h3>
+<p>The list of applets available depends on the device selected. It is possible to get a list of the supported applets for the device by running &quot;<i>sam-ba -d &lt;device&gt; -a help</i>&quot;:</p>
+<pre class="cpp">sam<span class="operator">-</span>ba <span class="operator">-</span>d sama5d2 <span class="operator">-</span>a help</pre>
+<pre class="cpp">Known applets: bootconfig<span class="operator">,</span> lowlevel<span class="operator">,</span> serialflash<span class="operator">,</span> qspiflash<span class="operator">,</span> nandflash</pre>
+<p>Each applet may provide different commands, but most external memory applets will support the commands in section <a href="cmdline.html#common-memory-applet-commands">Common Memory Applet Commands</a>.</p>
+<p>Documentation on the supported commands can be obtained by running &quot;<i>sam-ba -d &lt;device&gt; -a &lt;applet&gt; -c help</i>&quot;.</p>
+<p>For example the QSPI Flash applet for the SAMA5D2 supports commands: erase, read, write, writeboot, verify, verifyboot.</p>
+<p>The Boot Config applet for the SAMA5D2 is not an external memory applet and only supports these commands: readcfg, writecfg.</p>
+<p>Applets can have some parameters that may be provided either by the board preset or explicitely. Help on the parameters can be obtained by using an &quot;help&quot; argument. For example:</p>
+<pre class="cpp">sam<span class="operator">-</span>ba <span class="operator">-</span>d sama5d2 <span class="operator">-</span>a qspiflash:help</pre>
+<pre class="cpp">Syntax: qspiflash:<span class="operator">[</span><span class="operator">&lt;</span>instance<span class="operator">&gt;</span><span class="operator">]</span>:<span class="operator">[</span><span class="operator">&lt;</span>ioset<span class="operator">&gt;</span><span class="operator">]</span>:<span class="operator">[</span><span class="operator">&lt;</span>frequency<span class="operator">&gt;</span><span class="operator">]</span>
+Examples: qspiflash <span class="operator">-</span><span class="operator">&gt;</span> QSPI flash applet <span class="keyword">using</span> <span class="keyword">default</span> board settings
+          qspiflash:<span class="number">0</span>:<span class="number">3</span>:<span class="number">66</span> <span class="operator">-</span><span class="operator">&gt;</span> QSPI flash applet <span class="keyword">using</span> fully custom settings (QSPI0<span class="operator">,</span> IOSET3<span class="operator">,</span> <span class="number">66Mhz</span>)
+          qspiflash<span class="operator">::</span>:<span class="number">20</span> <span class="operator">-</span><span class="operator">&gt;</span> QSPI flash applet <span class="keyword">using</span> <span class="keyword">default</span> board settings but frequency set to <span class="number">20Mhz</span></pre>
+<a name="common-memory-applet-commands"></a>
+<h3 >Common Memory Applet Commands</h3>
+<p>The following common commands are often provided by external memory applets.</p>
+<div class="table"><table class="generic">
+ <thead><tr class="qt-style"><th >Command</th><th >1st argument</th><th >2nd argument</th><th >3rd argument</th><th >Description</th></tr></thead>
+<tr valign="top" class="odd"><td >erase</td><td >address*</td><td >length*</td><td ><i>none</i></td><td >Erase <i>length</i> bytes starting at <i>address</i></td></tr>
+<tr valign="top" class="even"><td >read</td><td >filename</td><td >address*</td><td >length*</td><td >Read <i>length</i> bytes starting at <i>address</i> into file <i>filename</i></td></tr>
+<tr valign="top" class="odd"><td >write</td><td >filename</td><td >address*</td><td ><i>none</i></td><td >Write content of file <i>filename</i> to memory starting at <i>address</i></td></tr>
+<tr valign="top" class="even"><td >writeboot</td><td >filename</td><td ><i>none</i></td><td ><i>none</i></td><td >Prepare content of file <i>filename</i> for booting and write it to memory starting at <i>address</i></td></tr>
+<tr valign="top" class="odd"><td >verify</td><td >filename</td><td >address*</td><td ><i>none</i></td><td >Compare content of file <i>filename</i> with memory starting at <i>address</i></td></tr>
+<tr valign="top" class="even"><td >verifyboot</td><td >filename</td><td ><i>none</i></td><td ><i>none</i></td><td >Prepare content of file <i>filename</i> for booting and compare it to memory starting at <i>address</i></td></tr>
+</table></div>
+<p>Argument noted with a star (*) in the previous table are not required and may be ommited. A suitable default will be used in this case: 0 for the address and the remaining size between <i>address</i> and the end of the memory for the <i>length</i>. For example, for a 4MB memory, the following commands are equivalent:</p>
+<ul>
+<li>erase:0:4194304</li>
+<li>erase::4194304</li>
+<li>erase:0</li>
+<li>erase</li>
+</ul>
+<p>Depending on the applet, some commands may not be supported, or there may be some additional ones. The syntax of the commands may also change between applets. Please use &quot;<i>-c help</i>&quot; to get the list of supported commands and their usage.</p>
+<a name="sama5d2-applet-commands-and-examples"></a>
+<h3 >SAMA5D2 Applet Commands and Examples</h3>
+<p>The SAMA5D2 external memory applets are: serialflash, qspiflash and nandflash.</p>
+<p>Except for initialization parameters, usage of these applets is the same. For example, to erase the first 64KB, write and verify a 30448 bytes boot program on the serialflash of a SAMA5D2-Xplained:</p>
+<pre class="cpp">sam<span class="operator">-</span>ba <span class="operator">-</span>p serial <span class="operator">-</span>b sama5d2<span class="operator">-</span>xplained <span class="operator">-</span>a serialflash <span class="operator">-</span>c erase <span class="operator">-</span>c writeboot:program<span class="operator">.</span>bin <span class="operator">-</span>c verifyboot:program<span class="operator">.</span>bin</pre>
+<pre class="cpp">Opening serial port <span class="char">'ttyACM0'</span>
+Connection opened<span class="operator">.</span>
+Detected memory size is <span class="number">4194304</span> bytes<span class="operator">.</span>
+Executing command <span class="char">'erase:0:65536'</span>
+Erased <span class="number">65536</span> bytes at address <span class="number">0x00000000</span> (<span class="number">100.00</span><span class="operator">%</span>)
+Executing command <span class="char">'writeboot:program.bin'</span>
+Patched file length (<span class="number">30448</span>) at offset <span class="number">20</span>
+Added <span class="number">16</span> bytes of padding to align to page size
+Wrote <span class="number">30464</span> bytes at address <span class="number">0x00000000</span> (<span class="number">100.00</span><span class="operator">%</span>)
+Executing command <span class="char">'verifyboot:program.bin'</span>
+Patched file length (<span class="number">30448</span>) at offset <span class="number">20</span>
+Added <span class="number">16</span> bytes of padding to align to page size
+Verified <span class="number">30464</span> bytes at address <span class="number">0x00000000</span> (<span class="number">100.00</span><span class="operator">%</span>)
+Connection closed<span class="operator">.</span></pre>
+<p>The SAMA5D2 boot configuration can also be set using the command line via the boot config applet. The <i>readcfg</i> and <i>writecfg</i> commands can be used to get/set the Boot Sequence Register (BSCR) and the Boot Config Word either in BUREG registers or in FUSE. Please refer to SAMA5D2 Datasheet section &quot;15.4 Boot configuration&quot; for more details on the SAMA5D2 boot sequence.</p>
+<p>To configure the boot to use BSCR/BUREG1 and boot on SPI0 IOSET2 or SDMMC0 and keep the default UART and JTAG settings, the following command can be used (line broken for easier reading):</p>
+<pre class="cpp">sam<span class="operator">-</span>ba <span class="operator">-</span>p serial <span class="operator">-</span>d sama5d2 <span class="operator">-</span>a bootconfig <span class="operator">-</span>c writecfg:bscr:valid<span class="operator">,</span>bureg1
+        <span class="operator">-</span>c writecfg:bureg1:QSPI0_DISABLED<span class="operator">,</span>QSPI1_DISABLED<span class="operator">,</span>SPI0_IOSET2<span class="operator">,</span>SPI1_DISABLED<span class="operator">,</span>NFC_DISABLED<span class="operator">,</span>SDMMC0<span class="operator">,</span>SDMMC1_DISABLED<span class="operator">,</span>EXT_MEM_BOOT</pre>
+<pre class="cpp">Opening serial port <span class="char">'ttyACM0'</span>
+Connection opened<span class="operator">.</span>
+Executing command <span class="char">'writecfg:bscr:valid,bureg0'</span>
+Setting BSCR to <span class="number">0x00000005</span>
+Executing command <span class="char">'writecfg:bureg1:QSPI0_DISABLED,QSPI1_DISABLED,SPI0_IOSET2,SPI1_DISABLED,NFC_DISABLED,SDMMC0,SDMMC1_DISABLED,EXT_MEM_BOOT'</span>
+Setting BUREG1 to <span class="number">0x00040bdf</span>
+Connection closed<span class="operator">.</span></pre>
+<p>The current boot configuration can be displayed using this command:</p>
+<pre class="cpp">sam<span class="operator">-</span>ba <span class="operator">-</span>p serial <span class="operator">-</span>d sama5d2 <span class="operator">-</span>a bootconfig <span class="operator">-</span>c readcfg:bscr <span class="operator">-</span>c readcfg:bureg0
+        <span class="operator">-</span>c readcfg:bureg1 <span class="operator">-</span>c readcfg:bureg2 <span class="operator">-</span>c readcfg:bureg3 <span class="operator">-</span>c readcfg:fuse</pre>
+<pre class="cpp">Opening serial port <span class="char">'ttyACM0'</span>
+Connection opened<span class="operator">.</span>
+Executing command <span class="char">'readcfg:bscr'</span>
+BSCR<span class="operator">=</span><span class="number">0x00000005</span> <span class="operator">/</span> BUREG1<span class="operator">,</span>VALID
+Executing command <span class="char">'readcfg:bureg0'</span>
+BUREG0<span class="operator">=</span><span class="number">0x00040bdf</span> <span class="operator">/</span> QSPI0_DISABLED<span class="operator">,</span>QSPI1_DISABLED<span class="operator">,</span>SPI0_IOSET2<span class="operator">,</span>SPI1_DISABLED<span class="operator">,</span>NFC_DISABLED<span class="operator">,</span>SDMMC0<span class="operator">,</span>SDMMC1_DISABLED<span class="operator">,</span>UART1_IOSET1<span class="operator">,</span>JTAG_IOSET1<span class="operator">,</span>EXT_MEM_BOOT
+Executing command <span class="char">'readcfg:bureg1'</span>
+BUREG1<span class="operator">=</span><span class="number">0x00040bdf</span> <span class="operator">/</span> QSPI0_DISABLED<span class="operator">,</span>QSPI1_DISABLED<span class="operator">,</span>SPI0_IOSET2<span class="operator">,</span>SPI1_DISABLED<span class="operator">,</span>NFC_DISABLED<span class="operator">,</span>SDMMC0<span class="operator">,</span>SDMMC1_DISABLED<span class="operator">,</span>UART1_IOSET1<span class="operator">,</span>JTAG_IOSET1<span class="operator">,</span>EXT_MEM_BOOT
+Executing command <span class="char">'readcfg:bureg2'</span>
+BUREG2<span class="operator">=</span><span class="number">0x00000000</span> <span class="operator">/</span> QSPI0_IOSET1<span class="operator">,</span>QSPI1_IOSET1<span class="operator">,</span>SPI0_IOSET1<span class="operator">,</span>SPI1_IOSET1<span class="operator">,</span>NFC_IOSET1<span class="operator">,</span>SDMMC0<span class="operator">,</span>SDMMC1<span class="operator">,</span>UART1_IOSET1<span class="operator">,</span>JTAG_IOSET1
+Executing command <span class="char">'readcfg:bureg3'</span>
+BUREG3<span class="operator">=</span><span class="number">0x00000000</span> <span class="operator">/</span> QSPI0_IOSET1<span class="operator">,</span>QSPI1_IOSET1<span class="operator">,</span>SPI0_IOSET1<span class="operator">,</span>SPI1_IOSET1<span class="operator">,</span>NFC_IOSET1<span class="operator">,</span>SDMMC0<span class="operator">,</span>SDMMC1<span class="operator">,</span>UART1_IOSET1<span class="operator">,</span>JTAG_IOSET1
+Executing command <span class="char">'readcfg:fuse'</span>
+FUSE<span class="operator">=</span><span class="number">0x00040000</span> <span class="operator">/</span> QSPI0_IOSET1<span class="operator">,</span>QSPI1_IOSET1<span class="operator">,</span>SPI0_IOSET1<span class="operator">,</span>SPI1_IOSET1<span class="operator">,</span>NFC_IOSET1<span class="operator">,</span>SDMMC0<span class="operator">,</span>SDMMC1<span class="operator">,</span>UART1_IOSET1<span class="operator">,</span>JTAG_IOSET1<span class="operator">,</span>EXT_MEM_BOOT
+Connection closed<span class="operator">.</span></pre>
+</div>
+<!-- @@@cmdline.html -->
+<p /><address><hr /><div align="center">
+<table width="100%" cellspacing="0" border="0"><tr class="address">
+<td width="60%" align="left">Copyright &copy; 2015-2017 Atmel Corporation</td>
+<td width="40%" align="right"><div align="right">SAM-BA Documentation</div></td>
+</tr></table></div></address></body>
+</html>

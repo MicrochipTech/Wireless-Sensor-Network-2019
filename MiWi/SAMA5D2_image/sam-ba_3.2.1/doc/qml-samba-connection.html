@@ -1,0 +1,461 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<!-- Connection.qml -->
+  <title>Connection QML Type | SAM-BA 3.2</title>
+  <link rel="stylesheet" type="text/css" href="style/style.css" />
+</head>
+<table border="0" cellpadding="0" cellspacing="0" width="100%">
+<tr>
+<td class="postheader" valign="center"> <a href="index.html">Home</a> &middot; </td></tr></table><div class="sidebar">
+<div class="toc">
+<h3><a name="toc">Contents</a></h3>
+<ul>
+<li class="level1"><a href="#properties">Properties</a></li>
+<li class="level1"><a href="#signals">Signals</a></li>
+<li class="level1"><a href="#methods">Methods</a></li>
+<li class="level1"><a href="#details">Detailed Description</a></li>
+<li class="level2"><a href="#reading-and-writing-memory">Reading and Writing Memory</a></li>
+<li class="level2"><a href="#executing-code">Executing Code</a></li>
+<li class="level2"><a href="#loading-and-running-applets">Loading and Running Applets</a></li>
+</ul>
+</div>
+<div class="sidebar-content" id="sidebar-content"></div></div>
+<h1 class="title">Connection QML Type</h1>
+<span class="subtitle"></span>
+<!-- $$$Connection-brief -->
+<p>The Connection type represents a physical connection to a programmable device. <a href="#details">More...</a></p>
+<!-- @@@Connection -->
+<div class="table"><table class="alignedsummary">
+<tr><td class="memItemLeft rightAlign topAlign"> Import Statement:</td><td class="memItemRight bottomAlign"> import SAMBA 3.2</td></tr><tr><td class="memItemLeft rightAlign topAlign"> Inherited By:</td><td class="memItemRight bottomAlign"> <p><a href="qml-samba-connection-jlink-jlinkconnection.html">JLinkConnection</a> and <a href="qml-samba-connection-serial-serialconnection.html">SerialConnection</a></p>
+</td></tr></table></div><ul>
+<li><a href="qml-samba-connection-members.html">List of all members, including inherited members</a></li>
+</ul>
+<a name="properties"></a>
+<h2 id="properties">Properties</h2>
+<ul>
+<li class="fn"><b><b><a href="qml-samba-connection.html#aliases-prop">aliases</a></b></b> : var</li>
+<li class="fn"><b><b><a href="qml-samba-connection.html#applet-prop">applet</a></b></b> : var</li>
+<li class="fn"><b><b><a href="qml-samba-connection.html#appletConnectionType-prop">appletConnectionType</a></b></b> : var</li>
+<li class="fn"><b><b><a href="qml-samba-connection.html#autoConnect-prop">autoConnect</a></b></b> : bool</li>
+<li class="fn"><b><b><a href="qml-samba-connection.html#autoDeviceInit-prop">autoDeviceInit</a></b></b> : bool</li>
+<li class="fn"><b><b><a href="qml-samba-connection.html#device-prop">device</a></b></b> : var</li>
+<li class="fn"><b><b><a href="qml-samba-connection.html#name-prop">name</a></b></b> : var</li>
+<li class="fn"><b><b><a href="qml-samba-connection.html#priority-prop">priority</a></b></b> : var</li>
+</ul>
+<a name="signals"></a>
+<h2 id="signals">Signals</h2>
+<ul>
+<li class="fn"><b><b><a href="qml-samba-connection.html#connectionClosed-signal">connectionClosed</a></b></b>()</li>
+<li class="fn"><b><b><a href="qml-samba-connection.html#connectionFailed-signal">connectionFailed</a></b></b>(string <i>message</i>)</li>
+<li class="fn"><b><b><a href="qml-samba-connection.html#connectionOpened-signal">connectionOpened</a></b></b>()</li>
+</ul>
+<a name="methods"></a>
+<h2 id="methods">Methods</h2>
+<ul>
+<li class="fn">ByteArray <b><b><a href="qml-samba-connection.html#appletBufferRead-method">appletBufferRead</a></b></b>(int <i>length</i>)</li>
+<li class="fn">bool <b><b><a href="qml-samba-connection.html#appletBufferWrite-method">appletBufferWrite</a></b></b>(ByteArray <i>data</i>)</li>
+<li class="fn">int <b><b><a href="qml-samba-connection.html#appletExecute-method">appletExecute</a></b></b>(AppletCommand <i>command</i>, var <i>arguments</i>)</li>
+<li class="fn">int <b><b><a href="qml-samba-connection.html#appletMailboxRead-method">appletMailboxRead</a></b></b>(int <i>index</i>)</li>
+<li class="fn">bool <b><b><a href="qml-samba-connection.html#appletUpload-method">appletUpload</a></b></b>(Applet <i>applet</i>)</li>
+<li class="fn">void <b><b><a href="qml-samba-connection.html#close-method">close</a></b></b>()</li>
+<li class="fn">bool <b><b><a href="qml-samba-connection.html#go-method">go</a></b></b>(int <i>address</i>)</li>
+<li class="fn">void <b><b><a href="qml-samba-connection.html#initializeApplet-method">initializeApplet</a></b></b>(string <i>appletName</i>)</li>
+<li class="fn">void <b><b><a href="qml-samba-connection.html#open-method">open</a></b></b>()</li>
+<li class="fn">ByteArray <b><b><a href="qml-samba-connection.html#read-method">read</a></b></b>(int <i>address</i>, int <i>length</i>)</li>
+<li class="fn">int <b><b><a href="qml-samba-connection.html#readu8-method">readu8</a></b></b>(int <i>address</i>, int <i>timeout</i>)</li>
+<li class="fn">int <b><b><a href="qml-samba-connection.html#readu16-method">readu16</a></b></b>(int <i>address</i>, int <i>timeout</i>)</li>
+<li class="fn">int <b><b><a href="qml-samba-connection.html#readu32-method">readu32</a></b></b>(int <i>address</i>, int <i>timeout</i>)</li>
+<li class="fn">bool <b><b><a href="qml-samba-connection.html#waitForMonitor-method">waitForMonitor</a></b></b>(int <i>timeout</i>)</li>
+<li class="fn">bool <b><b><a href="qml-samba-connection.html#write-method">write</a></b></b>(int <i>address</i>, ByteArray <i>data</i>)</li>
+<li class="fn">bool <b><b><a href="qml-samba-connection.html#writeu8-method">writeu8</a></b></b>(int <i>address</i>, int <i>data</i>)</li>
+<li class="fn">bool <b><b><a href="qml-samba-connection.html#writeu16-method">writeu16</a></b></b>(int <i>address</i>, int <i>data</i>)</li>
+<li class="fn">bool <b><b><a href="qml-samba-connection.html#writeu32-method">writeu32</a></b></b>(int <i>address</i>, int <i>data</i>)</li>
+</ul>
+<!-- $$$Connection-description -->
+<a name="details"></a>
+<h2 id="details">Detailed Description</h2>
+<p>This type contains methods to communicate with a device:</p>
+<ul>
+<li>reading/writing memory</li>
+<li>requesting execution of code</li>
+<li>basic functions to load and execute applets</li>
+</ul>
+<p>It is only intended to define the method prototypes and does not communicate with anything. Please use any of the types that inherit from <a href="qml-samba-connection.html">Connection</a> for actual usable implementations.</p>
+<a name="reading-and-writing-memory"></a>
+<h3 >Reading and Writing Memory</h3>
+<p>The following methods are provided to read and write to memory:</p>
+<div class="table"><table class="generic">
+ <thead><tr class="qt-style"><th >Name</th><th >Description</th></tr></thead>
+<tr valign="top" class="odd"><td ><a href="qml-samba-connection.html#read-method">read</a></td><td >Reads a memory block</td></tr>
+<tr valign="top" class="even"><td ><a href="qml-samba-connection.html#readu8-method">readu8</a></td><td >Reads single unsigned byte</td></tr>
+<tr valign="top" class="odd"><td ><a href="qml-samba-connection.html#readu16-method">readu16</a></td><td >Reads single unsigned 16-bit word</td></tr>
+<tr valign="top" class="even"><td ><a href="qml-samba-connection.html#readu32-method">readu32</a></td><td >Reads single unsigned 32-bit word</td></tr>
+<tr valign="top" class="odd"><td ><a href="qml-samba-connection.html#write-method">write</a></td><td >Writes a memory block</td></tr>
+<tr valign="top" class="even"><td ><a href="qml-samba-connection.html#writeu8-method">writeu8</a></td><td >Writes single unsigned byte</td></tr>
+<tr valign="top" class="odd"><td ><a href="qml-samba-connection.html#writeu16-method">writeu16</a></td><td >Writes single unsigned 16-bit word</td></tr>
+<tr valign="top" class="even"><td ><a href="qml-samba-connection.html#writeu32-method">writeu32</a></td><td >Writes single unsigned 32-bit word</td></tr>
+</table></div>
+<p>For example, to read a 32-bit unsigned word at address 0x12345678:</p>
+<pre class="cpp">var data <span class="operator">=</span> connection<span class="operator">.</span>readu32(<span class="number">0x12345678</span>)</pre>
+<p>To write unsigned 32-bit value 0x42 to address 0x12345678:</p>
+<pre class="cpp">connection<span class="operator">.</span>writeu32(<span class="number">0x12345678</span><span class="operator">,</span> <span class="number">0x42</span>)</pre>
+<a name="executing-code"></a>
+<h3 >Executing Code</h3>
+<p>The <code>go</code> method can be used to execute code on the device. It make the CPU jump to the given address. Please note that depending on the communication method, the executed code may have to give the control back to its caller. SAM-BA <a href="qml-samba-applet.html">Applets</a> contain such code to give back control to SAM-BA Monitor.</p>
+<p>For example, to execute code at address 0x12345678:</p>
+<pre class="cpp">connection<span class="operator">.</span>go(<span class="number">0x12345678</span>)</pre>
+<a name="loading-and-running-applets"></a>
+<h3 >Loading and Running Applets</h3>
+<p>The Connection type also contains methods to load and execute applets (see <a href="qml-samba-applet.html">Applet</a> for more information on SAM-BA applets). The methods related to applet handling are:</p>
+<div class="table"><table class="generic">
+ <thead><tr class="qt-style"><th >Name</th><th >Description</th></tr></thead>
+<tr valign="top" class="odd"><td ><a href="qml-samba-connection.html#appletUpload-method">appletUpload</a></td><td >Upload the applet code to the device</td></tr>
+<tr valign="top" class="even"><td ><a href="qml-samba-connection.html#appletMailboxRead-method">appletMailboxRead</a></td><td >Reads single unsigned 32-bit word from the mailbox</td></tr>
+<tr valign="top" class="odd"><td ><a href="qml-samba-connection.html#appletBufferRead-method">appletBufferRead</a></td><td >Reads a block from the applet buffer</td></tr>
+<tr valign="top" class="even"><td ><a href="qml-samba-connection.html#appletBufferWrite-method">appletBufferWrite</a></td><td >Writes a block into the applet buffer</td></tr>
+<tr valign="top" class="odd"><td ><a href="qml-samba-connection.html#appletExecute-method">appletExecute</a></td><td >Writes parameters in the applet mailbox and execute the applet code</td></tr>
+</table></div>
+<p>For example, to load and initialize an applet:</p>
+<pre class="cpp">connection<span class="operator">.</span>appletUpload(applet)
+connection<span class="operator">.</span>appletExecute(<span class="string">&quot;init&quot;</span>)</pre>
+<p>This example assumes that:</p>
+<ul>
+<li>the applet initialization command is named &quot;init&quot;</li>
+<li>it takes no arguments</li>
+</ul>
+<p>To read a 0x42 bytes block at offset 0x1234 from a &quot;memory&quot; applet:</p>
+<pre class="cpp">connection<span class="operator">.</span>appletExecute(<span class="string">&quot;read&quot;</span><span class="operator">,</span> <span class="operator">[</span> connection<span class="operator">.</span>applet<span class="operator">.</span>bufferAddr<span class="operator">,</span> <span class="number">0x42</span><span class="operator">,</span> <span class="number">0x1234</span> <span class="operator">]</span>)
+var block <span class="operator">=</span> connection<span class="operator">.</span>appletBufferRead(<span class="number">0x42</span>)</pre>
+<p>This example assumes that:</p>
+<ul>
+<li>the applet has already been loaded/intialized</li>
+<li>its read command is named &quot;read&quot; and that it takes as arguments the buffer address, the number of bytes to read and the starting address</li>
+</ul>
+<!-- @@@Connection -->
+<h2>Property Documentation</h2>
+<!-- $$$aliases -->
+<div class="qmlitem"><div class="qmlproto">
+<div class="table"><table class="qmlname">
+<tr valign="top" class="odd" id="aliases-prop">
+<td class="tblQmlPropNode"><p>
+<a name="aliases-prop"></a><span class="name">aliases</span> : <span class="type">var</span></p></td></tr>
+</table></div>
+</div><div class="qmldoc"><p>The connection aliases (alternate names that can be used on the command-line)</p>
+</div></div><!-- @@@aliases -->
+<br/>
+<!-- $$$applet -->
+<div class="qmlitem"><div class="qmlproto">
+<div class="table"><table class="qmlname">
+<tr valign="top" class="odd" id="applet-prop">
+<td class="tblQmlPropNode"><p>
+<a name="applet-prop"></a><span class="name">applet</span> : <span class="type">var</span></p></td></tr>
+</table></div>
+</div><div class="qmldoc"><p>The current applet, or <code>undefined</code> if no applet is loaded.</p>
+</div></div><!-- @@@applet -->
+<br/>
+<!-- $$$appletConnectionType -->
+<div class="qmlitem"><div class="qmlproto">
+<div class="table"><table class="qmlname">
+<tr valign="top" class="odd" id="appletConnectionType-prop">
+<td class="tblQmlPropNode"><p>
+<a name="appletConnectionType-prop"></a><span class="name">appletConnectionType</span> : <span class="type">var</span></p></td></tr>
+</table></div>
+</div><div class="qmldoc"><p>The connection type value passed at applet initialization</p>
+</div></div><!-- @@@appletConnectionType -->
+<br/>
+<!-- $$$autoConnect -->
+<div class="qmlitem"><div class="qmlproto">
+<div class="table"><table class="qmlname">
+<tr valign="top" class="odd" id="autoConnect-prop">
+<td class="tblQmlPropNode"><p>
+<a name="autoConnect-prop"></a><span class="name">autoConnect</span> : <span class="type">bool</span></p></td></tr>
+</table></div>
+</div><div class="qmldoc"><p>Connection automatic connection flag</p>
+<p>Whether the connection should be automatically established once the Connection QML object is ready.</p>
+</div></div><!-- @@@autoConnect -->
+<br/>
+<!-- $$$autoDeviceInit -->
+<div class="qmlitem"><div class="qmlproto">
+<div class="table"><table class="qmlname">
+<tr valign="top" class="odd" id="autoDeviceInit-prop">
+<td class="tblQmlPropNode"><p>
+<a name="autoDeviceInit-prop"></a><span class="name">autoDeviceInit</span> : <span class="type">bool</span></p></td></tr>
+</table></div>
+</div><div class="qmldoc"><p>Connection automatic device initialization flag</p>
+<p>Whether the device initialize() function should be automatically called once the connection is opened.</p>
+</div></div><!-- @@@autoDeviceInit -->
+<br/>
+<!-- $$$device -->
+<div class="qmlitem"><div class="qmlproto">
+<div class="table"><table class="qmlname">
+<tr valign="top" class="odd" id="device-prop">
+<td class="tblQmlPropNode"><p>
+<a name="device-prop"></a><span class="name">device</span> : <span class="type">var</span></p></td></tr>
+</table></div>
+</div><div class="qmldoc"><p>Device whose applets will be used</p>
+</div></div><!-- @@@device -->
+<br/>
+<!-- $$$name -->
+<div class="qmlitem"><div class="qmlproto">
+<div class="table"><table class="qmlname">
+<tr valign="top" class="odd" id="name-prop">
+<td class="tblQmlPropNode"><p>
+<a name="name-prop"></a><span class="name">name</span> : <span class="type">var</span></p></td></tr>
+</table></div>
+</div><div class="qmldoc"><p>The connection name</p>
+</div></div><!-- @@@name -->
+<br/>
+<!-- $$$priority -->
+<div class="qmlitem"><div class="qmlproto">
+<div class="table"><table class="qmlname">
+<tr valign="top" class="odd" id="priority-prop">
+<td class="tblQmlPropNode"><p>
+<a name="priority-prop"></a><span class="name">priority</span> : <span class="type">var</span></p></td></tr>
+</table></div>
+</div><div class="qmldoc"><p>The connection priority value</p>
+<p>The connection with the lowest priority is selected by default when no connection parameter is provided on the command-line.</p>
+</div></div><!-- @@@priority -->
+<br/>
+<h2>Signal Documentation</h2>
+<!-- $$$connectionClosed -->
+<div class="qmlitem"><div class="qmlproto">
+<div class="table"><table class="qmlname">
+<tr valign="top" class="odd" id="connectionClosed-signal">
+<td class="tblQmlFuncNode"><p>
+<a name="connectionClosed-signal"></a><span class="name">connectionClosed</span>()</p></td></tr>
+</table></div>
+</div><div class="qmldoc"><p>This signal is triggered when the connection has been closed.</p>
+</div></div><!-- @@@connectionClosed -->
+<br/>
+<!-- $$$connectionFailed -->
+<div class="qmlitem"><div class="qmlproto">
+<div class="table"><table class="qmlname">
+<tr valign="top" class="odd" id="connectionFailed-signal">
+<td class="tblQmlFuncNode"><p>
+<a name="connectionFailed-signal"></a><span class="name">connectionFailed</span>(<span class="type">string</span> <i>message</i>)</p></td></tr>
+</table></div>
+</div><div class="qmldoc"><p>This signal is triggered when the connection failed to open.</p>
+<p>The <i>message</i> parameter contains the failure cause.</p>
+</div></div><!-- @@@connectionFailed -->
+<br/>
+<!-- $$$connectionOpened -->
+<div class="qmlitem"><div class="qmlproto">
+<div class="table"><table class="qmlname">
+<tr valign="top" class="odd" id="connectionOpened-signal">
+<td class="tblQmlFuncNode"><p>
+<a name="connectionOpened-signal"></a><span class="name">connectionOpened</span>()</p></td></tr>
+</table></div>
+</div><div class="qmldoc"><p>This signal is triggered when the connection has been opened successfully.</p>
+</div></div><!-- @@@connectionOpened -->
+<br/>
+<h2>Method Documentation</h2>
+<!-- $$$appletBufferRead -->
+<div class="qmlitem"><div class="qmlproto">
+<div class="table"><table class="qmlname">
+<tr valign="top" class="odd" id="appletBufferRead-method">
+<td class="tblQmlFuncNode"><p>
+<a name="appletBufferRead-method"></a><span class="type">ByteArray</span> <span class="name">appletBufferRead</span>(<span class="type">int</span> <i>length</i>)</p></td></tr>
+</table></div>
+</div><div class="qmldoc"><p>Reads <i>length</i> bytes from the applet buffer.</p>
+<p>Returns the data on success, <code>undefined</code> if an error occurred or if the requested length is greater than the current applet buffer size.</p>
+</div></div><!-- @@@appletBufferRead -->
+<br/>
+<!-- $$$appletBufferWrite -->
+<div class="qmlitem"><div class="qmlproto">
+<div class="table"><table class="qmlname">
+<tr valign="top" class="odd" id="appletBufferWrite-method">
+<td class="tblQmlFuncNode"><p>
+<a name="appletBufferWrite-method"></a><span class="type">bool</span> <span class="name">appletBufferWrite</span>(<span class="type">ByteArray</span> <i>data</i>)</p></td></tr>
+</table></div>
+</div><div class="qmldoc"><p>Writes <i>data</i> into the applet buffer.</p>
+<p>Returns true on success, false if an error occurred or if the <i>data</i> length is greater than the current applet buffer.</p>
+</div></div><!-- @@@appletBufferWrite -->
+<br/>
+<!-- $$$appletExecute -->
+<div class="qmlitem"><div class="qmlproto">
+<div class="table"><table class="qmlname">
+<tr valign="top" class="odd" id="appletExecute-method">
+<td class="tblQmlFuncNode"><p>
+<a name="appletExecute-method"></a><span class="type">int</span> <span class="name">appletExecute</span>(<span class="type"><a href="qml-samba-appletcommand.html">AppletCommand</a></span> <i>command</i>, <span class="type">var</span> <i>arguments</i>)</p></td></tr>
+</table></div>
+</div><div class="qmldoc"><p>Execute applet <i>command</i> with <i>arguments</i> and poll for completion until the command has completed or its timeout is expired.</p>
+<p>Arguments can be supplied a single integer if there is only one argument, or an array of integers if multiple arguments are needed.</p>
+<p>After an applet command is started, the Connection will poll for applet completion until the requested timeout is expired.</p>
+<p>Returns the applet return code. Zero (0) is usually means success and anything else is an error. The values of the error codes are applet-specific. No value is returned if no applet is loaded, if the arguments types are invalid or if the applet command has not completed before the timeout was reached.</p>
+</div></div><!-- @@@appletExecute -->
+<br/>
+<!-- $$$appletMailboxRead -->
+<div class="qmlitem"><div class="qmlproto">
+<div class="table"><table class="qmlname">
+<tr valign="top" class="odd" id="appletMailboxRead-method">
+<td class="tblQmlFuncNode"><p>
+<a name="appletMailboxRead-method"></a><span class="type">int</span> <span class="name">appletMailboxRead</span>(<span class="type">int</span> <i>index</i>)</p></td></tr>
+</table></div>
+</div><div class="qmldoc"><p>Reads unsigned 32-bit word at index <i>index</i> in the applet mailbox.</p>
+</div></div><!-- @@@appletMailboxRead -->
+<br/>
+<!-- $$$appletUpload -->
+<div class="qmlitem"><div class="qmlproto">
+<div class="table"><table class="qmlname">
+<tr valign="top" class="odd" id="appletUpload-method">
+<td class="tblQmlFuncNode"><p>
+<a name="appletUpload-method"></a><span class="type">bool</span> <span class="name">appletUpload</span>(<span class="type"><a href="qml-samba-applet.html">Applet</a></span> <i>applet</i>)</p></td></tr>
+</table></div>
+</div><div class="qmldoc"><p>Uploads an <i>applet</i> to the device.</p>
+<p>The applet code is written at the applet <code>codeAddr</code> but no code is executed.</p>
+<p>Returns true on success, false otherwise.</p>
+</div></div><!-- @@@appletUpload -->
+<br/>
+<!-- $$$close -->
+<div class="qmlitem"><div class="qmlproto">
+<div class="table"><table class="qmlname">
+<tr valign="top" class="odd" id="close-method">
+<td class="tblQmlFuncNode"><p>
+<a name="close-method"></a><span class="type">void</span> <span class="name">close</span>()</p></td></tr>
+</table></div>
+</div><div class="qmldoc"><p>Closes the connection.</p>
+<p>The <a href="qml-samba-connection.html#connectionClosed-signal">connectionClosed</a> signal will be raised when the connection is closed.</p>
+</div></div><!-- @@@close -->
+<br/>
+<!-- $$$go -->
+<div class="qmlitem"><div class="qmlproto">
+<div class="table"><table class="qmlname">
+<tr valign="top" class="odd" id="go-method">
+<td class="tblQmlFuncNode"><p>
+<a name="go-method"></a><span class="type">bool</span> <span class="name">go</span>(<span class="type">int</span> <i>address</i>)</p></td></tr>
+</table></div>
+</div><div class="qmldoc"><p>Execute code at address <i>address</i>.</p>
+<p>Returns true on success, false otherwise.</p>
+</div></div><!-- @@@go -->
+<br/>
+<!-- $$$initializeApplet -->
+<div class="qmlitem"><div class="qmlproto">
+<div class="table"><table class="qmlname">
+<tr valign="top" class="odd" id="initializeApplet-method">
+<td class="tblQmlFuncNode"><p>
+<a name="initializeApplet-method"></a><span class="type">void</span> <span class="name">initializeApplet</span>(<span class="type">string</span> <i>appletName</i>)</p></td></tr>
+</table></div>
+</div><div class="qmldoc"><p>Loads and initializes the <i>appletName</i> applet for the currently selected device.</p>
+<p>Throws an <i>Error</i> if the applet is not found or could not be loaded/initialized.</p>
+</div></div><!-- @@@initializeApplet -->
+<br/>
+<!-- $$$open -->
+<div class="qmlitem"><div class="qmlproto">
+<div class="table"><table class="qmlname">
+<tr valign="top" class="odd" id="open-method">
+<td class="tblQmlFuncNode"><p>
+<a name="open-method"></a><span class="type">void</span> <span class="name">open</span>()</p></td></tr>
+</table></div>
+</div><div class="qmldoc"><p>Opens the connection.</p>
+<p>On success, the <a href="qml-samba-connection.html#connectionOpened-signal">connectionOpened</a> signal will be raised. If an error occurrs, the <a href="qml-samba-connection.html#connectionFailed-signal">connectionFailed</a> signal will be raised with the failure cause as argument.</p>
+</div></div><!-- @@@open -->
+<br/>
+<!-- $$$read -->
+<div class="qmlitem"><div class="qmlproto">
+<div class="table"><table class="qmlname">
+<tr valign="top" class="odd" id="read-method">
+<td class="tblQmlFuncNode"><p>
+<a name="read-method"></a><span class="type">ByteArray</span> <span class="name">read</span>(<span class="type">int</span> <i>address</i>, <span class="type">int</span> <i>length</i>)</p></td></tr>
+</table></div>
+</div><div class="qmldoc"><p>Read <i>length</i> bytes at address <i>address</i>.</p>
+<p>Returns a ByteArray with the data or undefined if an error occured or if no data could be read after <i>timeout</i> milliseconds.</p>
+</div></div><!-- @@@read -->
+<br/>
+<!-- $$$readu8 -->
+<div class="qmlitem"><div class="qmlproto">
+<div class="table"><table class="qmlname">
+<tr valign="top" class="odd" id="readu8-method">
+<td class="tblQmlFuncNode"><p>
+<a name="readu8-method"></a><span class="type">int</span> <span class="name">readu8</span>(<span class="type">int</span> <i>address</i>, <span class="type">int</span> <i>timeout</i>)</p></td></tr>
+</table></div>
+</div><div class="qmldoc"><p>Read a single unsigned byte at the given <i>address</i>.</p>
+<p>Returns the unsigned byte read at <i>address</i> or undefined if an error occured or if no value could be read after <i>timeout</i> milliseconds.</p>
+</div></div><!-- @@@readu8 -->
+<br/>
+<!-- $$$readu16 -->
+<div class="qmlitem"><div class="qmlproto">
+<div class="table"><table class="qmlname">
+<tr valign="top" class="odd" id="readu16-method">
+<td class="tblQmlFuncNode"><p>
+<a name="readu16-method"></a><span class="type">int</span> <span class="name">readu16</span>(<span class="type">int</span> <i>address</i>, <span class="type">int</span> <i>timeout</i>)</p></td></tr>
+</table></div>
+</div><div class="qmldoc"><p>Read a single unsigned 16-bit word at the given <i>address</i>.</p>
+<p>Returns the unsigned 16-bit word read at <i>address</i> or undefined if an error occured or if no value could be read after <i>timeout</i> milliseconds.</p>
+</div></div><!-- @@@readu16 -->
+<br/>
+<!-- $$$readu32 -->
+<div class="qmlitem"><div class="qmlproto">
+<div class="table"><table class="qmlname">
+<tr valign="top" class="odd" id="readu32-method">
+<td class="tblQmlFuncNode"><p>
+<a name="readu32-method"></a><span class="type">int</span> <span class="name">readu32</span>(<span class="type">int</span> <i>address</i>, <span class="type">int</span> <i>timeout</i>)</p></td></tr>
+</table></div>
+</div><div class="qmldoc"><p>Read a single unsigned 32-bit word at the given <i>address</i>.</p>
+<p>Returns the unsigned 32-bit word read at <i>address</i> or undefined if an error occured or if no value could be read after <i>timeout</i> milliseconds.</p>
+</div></div><!-- @@@readu32 -->
+<br/>
+<!-- $$$waitForMonitor -->
+<div class="qmlitem"><div class="qmlproto">
+<div class="table"><table class="qmlname">
+<tr valign="top" class="odd" id="waitForMonitor-method">
+<td class="tblQmlFuncNode"><p>
+<a name="waitForMonitor-method"></a><span class="type">bool</span> <span class="name">waitForMonitor</span>(<span class="type">int</span> <i>timeout</i>)</p></td></tr>
+</table></div>
+</div><div class="qmldoc"><p>Wait <i>timeout</i> milliseconds for monitor to be ready</p>
+<p>Some connection plugins do no implement this feature and will return <i>true</i> even when the monitor is not yet ready.</p>
+<p>Returns true on success, false otherwise.</p>
+</div></div><!-- @@@waitForMonitor -->
+<br/>
+<!-- $$$write -->
+<div class="qmlitem"><div class="qmlproto">
+<div class="table"><table class="qmlname">
+<tr valign="top" class="odd" id="write-method">
+<td class="tblQmlFuncNode"><p>
+<a name="write-method"></a><span class="type">bool</span> <span class="name">write</span>(<span class="type">int</span> <i>address</i>, <span class="type">ByteArray</span> <i>data</i>)</p></td></tr>
+</table></div>
+</div><div class="qmldoc"><p>Write byte array <i>data</i> at address <i>address</i>.</p>
+<p>Returns true on success, false otherwise.</p>
+</div></div><!-- @@@write -->
+<br/>
+<!-- $$$writeu8 -->
+<div class="qmlitem"><div class="qmlproto">
+<div class="table"><table class="qmlname">
+<tr valign="top" class="odd" id="writeu8-method">
+<td class="tblQmlFuncNode"><p>
+<a name="writeu8-method"></a><span class="type">bool</span> <span class="name">writeu8</span>(<span class="type">int</span> <i>address</i>, <span class="type">int</span> <i>data</i>)</p></td></tr>
+</table></div>
+</div><div class="qmldoc"><p>Write unsigned byte <i>data</i> at address <i>address</i>.</p>
+<p>Returns true on success, false otherwise.</p>
+</div></div><!-- @@@writeu8 -->
+<br/>
+<!-- $$$writeu16 -->
+<div class="qmlitem"><div class="qmlproto">
+<div class="table"><table class="qmlname">
+<tr valign="top" class="odd" id="writeu16-method">
+<td class="tblQmlFuncNode"><p>
+<a name="writeu16-method"></a><span class="type">bool</span> <span class="name">writeu16</span>(<span class="type">int</span> <i>address</i>, <span class="type">int</span> <i>data</i>)</p></td></tr>
+</table></div>
+</div><div class="qmldoc"><p>Write unsigned 16-bit word <i>data</i> at address <i>address</i>.</p>
+<p>Returns true on success, false otherwise.</p>
+</div></div><!-- @@@writeu16 -->
+<br/>
+<!-- $$$writeu32 -->
+<div class="qmlitem"><div class="qmlproto">
+<div class="table"><table class="qmlname">
+<tr valign="top" class="odd" id="writeu32-method">
+<td class="tblQmlFuncNode"><p>
+<a name="writeu32-method"></a><span class="type">bool</span> <span class="name">writeu32</span>(<span class="type">int</span> <i>address</i>, <span class="type">int</span> <i>data</i>)</p></td></tr>
+</table></div>
+</div><div class="qmldoc"><p>Write unsigned 32-bit word <i>data</i> at address <i>address</i>.</p>
+<p>Returns true on success, false otherwise.</p>
+</div></div><!-- @@@writeu32 -->
+<br/>
+<p /><address><hr /><div align="center">
+<table width="100%" cellspacing="0" border="0"><tr class="address">
+<td width="60%" align="left">Copyright &copy; 2015-2017 Atmel Corporation</td>
+<td width="40%" align="right"><div align="right">SAM-BA Documentation</div></td>
+</tr></table></div></address></body>
+</html>

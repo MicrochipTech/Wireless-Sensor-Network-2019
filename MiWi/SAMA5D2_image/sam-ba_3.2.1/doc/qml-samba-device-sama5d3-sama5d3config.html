@@ -1,0 +1,235 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<!-- SAMA5D3Config.qml -->
+  <title>SAMA5D3Config QML Type | SAM-BA 3.2</title>
+  <link rel="stylesheet" type="text/css" href="style/style.css" />
+</head>
+<table border="0" cellpadding="0" cellspacing="0" width="100%">
+<tr>
+<td class="postheader" valign="center"> <a href="index.html">Home</a> &middot; </td></tr></table><div class="sidebar">
+<div class="toc">
+<h3><a name="toc">Contents</a></h3>
+<ul>
+<li class="level1"><a href="#properties">Properties</a></li>
+<li class="level1"><a href="#details">Detailed Description</a></li>
+<li class="level2"><a href="#serial-console-configuration">Serial Console Configuration</a></li>
+<li class="level2"><a href="#external-ram">External RAM</a></li>
+<li class="level2"><a href="#sd-mmc-configuration">SD/MMC Configuration</a></li>
+<li class="level3"><a href="#pin-list-for-sd-mmc-instance-0-i-o-set-1">Pin List for SD/MMC Instance 0 (I/O Set 1)</a></li>
+<li class="level3"><a href="#pin-list-for-sd-mmc-instance-1-i-o-set-1">Pin List for SD/MMC Instance 1 (I/O Set 1)</a></li>
+<li class="level3"><a href="#pin-list-for-sd-mmc-instance-2-i-o-set-1">Pin List for SD/MMC Instance 2 (I/O Set 1)</a></li>
+<li class="level2"><a href="#spi-serial-flash-configuration">SPI Serial Flash Configuration</a></li>
+<li class="level3"><a href="#pin-list-for-spi-serial-flash-instance-0-i-o-set-1">Pin List for SPI Serial Flash Instance 0 (I/O Set 1)</a></li>
+<li class="level3"><a href="#pin-list-for-spi-serial-flash-instance-1-i-o-set-1">Pin List for SPI Serial Flash Instance 1 (I/O Set 1)</a></li>
+<li class="level2"><a href="#nand-flash-configuration">NAND Flash Configuration</a></li>
+<li class="level3"><a href="#pin-list-for-nand-flash-i-o-set-1">Pin List for NAND Flash (I/O Set 1)</a></li>
+</ul>
+</div>
+<div class="sidebar-content" id="sidebar-content"></div></div>
+<h1 class="title">SAMA5D3Config QML Type</h1>
+<span class="subtitle"></span>
+<!-- $$$SAMA5D3Config-brief -->
+<p>Contains configuration values for a SAMA5D3 device. <a href="#details">More...</a></p>
+<!-- @@@SAMA5D3Config -->
+<div class="table"><table class="alignedsummary">
+<tr><td class="memItemLeft rightAlign topAlign"> Import Statement:</td><td class="memItemRight bottomAlign"> import SAMBA.Device.SAMA5D3 3.2</td></tr></table></div><ul>
+<li><a href="qml-samba-device-sama5d3-sama5d3config-members.html">List of all members, including inherited members</a></li>
+</ul>
+<a name="properties"></a>
+<h2 id="properties">Properties</h2>
+<ul>
+<li class="fn"><b><b><a href="qml-samba-device-sama5d3-sama5d3config.html#extram-prop">extram</a></b></b> : alias</li>
+<li class="fn"><b><b><a href="qml-samba-device-sama5d3-sama5d3config.html#nandflash-prop">nandflash</a></b></b> : alias</li>
+<li class="fn"><b><b><a href="qml-samba-device-sama5d3-sama5d3config.html#sdmmc-prop">sdmmc</a></b></b> : alias</li>
+<li class="fn"><b><b><a href="qml-samba-device-sama5d3-sama5d3config.html#serial-prop">serial</a></b></b> : alias</li>
+<li class="fn"><b><b><a href="qml-samba-device-sama5d3-sama5d3config.html#serialflash-prop">serialflash</a></b></b> : alias</li>
+</ul>
+<!-- $$$SAMA5D3Config-description -->
+<a name="details"></a>
+<h2 id="details">Detailed Description</h2>
+<p>By default, no configuration values are set.</p>
+<a name="serial-console-configuration"></a>
+<h2 id="serial-console-configuration">Serial Console Configuration</h2>
+<p>The following serial console configurations are supported:</p>
+<div class="table"><table class="generic">
+ <thead><tr class="qt-style"><th >Instance</th><th >Peripheral</th><th >I/O Set</th><th >TX Pin</th></tr></thead>
+<tr valign="top" class="odd"><td >0</td><td >DBGU</td><td >1</td><td >PB31A</td></tr>
+<tr valign="top" class="even"><td >1</td><td >UART0</td><td >1</td><td >PC30A</td></tr>
+<tr valign="top" class="odd"><td >2</td><td >UART1</td><td >1</td><td >PA31B</td></tr>
+<tr valign="top" class="even"><td >3</td><td >USART0</td><td >1</td><td >PD18A</td></tr>
+<tr valign="top" class="odd"><td >4</td><td >USART1</td><td >1</td><td >PB29A</td></tr>
+<tr valign="top" class="even"><td >5</td><td >USART2</td><td >1</td><td >PE26B</td></tr>
+<tr valign="top" class="odd"><td >6</td><td >USART3</td><td >1</td><td >PE19B</td></tr>
+</table></div>
+<a name="external-ram"></a>
+<h2 id="external-ram">External RAM</h2>
+<p>The following external RAM configurations are supported:</p>
+<div class="table"><table class="generic">
+ <thead><tr class="qt-style"><th >Preset</th><th >Type</th><th >Model</th><th >Size</th></tr></thead>
+<tr valign="top" class="odd"><td >0</td><td >DDR2</td><td >MT47H128M8</td><td >4x128MB</td></tr>
+<tr valign="top" class="even"><td >1</td><td >DDR2</td><td >MT47H64M16</td><td >128MB</td></tr>
+<tr valign="top" class="odd"><td >2</td><td >DDR2</td><td >MT47H128M16</td><td >2x256MB</td></tr>
+<tr valign="top" class="even"><td >2</td><td >LPDDR2</td><td >MT42L128M16</td><td >2*256MB</td></tr>
+<tr valign="top" class="odd"><td >8</td><td >DDR2</td><td >W971G16SG</td><td >128MB</td></tr>
+<tr valign="top" class="even"><td >9</td><td >DDR2</td><td >W972GG6KB</td><td >2*256MB</td></tr>
+</table></div>
+<a name="sd-mmc-configuration"></a>
+<h2 id="sd-mmc-configuration">SD/MMC Configuration</h2>
+<p>The following SD/MMC configurations are supported:</p>
+<div class="table"><table class="generic">
+ <thead><tr class="qt-style"><th >Instance</th><th >Peripheral</th><th >I/O Set</th><th >Bus Width</th></tr></thead>
+<tr valign="top" class="odd"><td >0</td><td >HSMCI0</td><td >1</td><td >1-bit, 4-bit, 8-bit</td></tr>
+<tr valign="top" class="even"><td >1</td><td >HSMCI1</td><td >1</td><td >1-bit, 4-bit</td></tr>
+<tr valign="top" class="odd"><td >2</td><td >HSMCI2</td><td >1</td><td >1-bit, 4-bit</td></tr>
+</table></div>
+<p>The SD/MMC applet on SAMA5D3 does not support voltage switching, so the <i>voltage</i> configuration property is ignored.</p>
+<a name="pin-list-for-sd-mmc-instance-0-i-o-set-1"></a>
+<h3 >Pin List for SD/MMC Instance 0 (I/O Set 1)</h3>
+<div class="table"><table class="generic">
+ <thead><tr class="qt-style"><th >Pin</th><th >Use</th></tr></thead>
+<tr valign="top" class="odd"><td >PD9A</td><td >Clock</td></tr>
+<tr valign="top" class="even"><td >PD0A</td><td >Command</td></tr>
+<tr valign="top" class="odd"><td >PD1A</td><td >Data 0 (bus width: 1-bit, 4-bit, 8-bit)</td></tr>
+<tr valign="top" class="even"><td >PD2A</td><td >Data 1 (bus width: 4-bit, 8-bit)</td></tr>
+<tr valign="top" class="odd"><td >PD3A</td><td >Data 2 (bus width: 4-bit, 8-bit)</td></tr>
+<tr valign="top" class="even"><td >PD4A</td><td >Data 3 (bus width: 4-bit, 8-bit)</td></tr>
+<tr valign="top" class="odd"><td >PD5A</td><td >Data 4 (bus width: 8-bit)</td></tr>
+<tr valign="top" class="even"><td >PD6A</td><td >Data 5 (bus width: 8-bit)</td></tr>
+<tr valign="top" class="odd"><td >PD7A</td><td >Data 6 (bus width: 8-bit)</td></tr>
+<tr valign="top" class="even"><td >PD8A</td><td >Data 7 (bus width: 8-bit)</td></tr>
+</table></div>
+<a name="pin-list-for-sd-mmc-instance-1-i-o-set-1"></a>
+<h3 >Pin List for SD/MMC Instance 1 (I/O Set 1)</h3>
+<div class="table"><table class="generic">
+ <thead><tr class="qt-style"><th >Pin</th><th >Use</th></tr></thead>
+<tr valign="top" class="odd"><td >PB24A</td><td >Clock</td></tr>
+<tr valign="top" class="even"><td >PB19A</td><td >Command</td></tr>
+<tr valign="top" class="odd"><td >PB20A</td><td >Data 0 (bus width: 1-bit, 4-bit)</td></tr>
+<tr valign="top" class="even"><td >PB21A</td><td >Data 1 (bus width: 4-bit)</td></tr>
+<tr valign="top" class="odd"><td >PB22A</td><td >Data 2 (bus width: 4-bit)</td></tr>
+<tr valign="top" class="even"><td >PB23A</td><td >Data 3 (bus width: 4-bit)</td></tr>
+</table></div>
+<a name="pin-list-for-sd-mmc-instance-2-i-o-set-1"></a>
+<h3 >Pin List for SD/MMC Instance 2 (I/O Set 1)</h3>
+<div class="table"><table class="generic">
+ <thead><tr class="qt-style"><th >Pin</th><th >Use</th></tr></thead>
+<tr valign="top" class="odd"><td >PC15A</td><td >Clock</td></tr>
+<tr valign="top" class="even"><td >PC10A</td><td >Command</td></tr>
+<tr valign="top" class="odd"><td >PC11A</td><td >Data 0 (Bus Width: 1-bit, 4-bit)</td></tr>
+<tr valign="top" class="even"><td >PC12A</td><td >Data 1 (Bus Width: 4-bit)</td></tr>
+<tr valign="top" class="odd"><td >PC13A</td><td >Data 2 (Bus Width: 4-bit)</td></tr>
+<tr valign="top" class="even"><td >PC14A</td><td >Data 3 (Bus Width: 4-bit)</td></tr>
+</table></div>
+<a name="spi-serial-flash-configuration"></a>
+<h2 id="spi-serial-flash-configuration">SPI Serial Flash Configuration</h2>
+<p>The following SPI Serial Flash configurations are supported:</p>
+<div class="table"><table class="generic">
+ <thead><tr class="qt-style"><th >Instance</th><th >Peripheral</th><th >I/O Set</th><th >Chip Selects</th></tr></thead>
+<tr valign="top" class="odd"><td >0</td><td >SPI0</td><td >1</td><td >0, 1, 2, 3</td></tr>
+<tr valign="top" class="even"><td >1</td><td >SPI1</td><td >1</td><td >0, 1, 2, 3</td></tr>
+</table></div>
+<a name="pin-list-for-spi-serial-flash-instance-0-i-o-set-1"></a>
+<h3 >Pin List for SPI Serial Flash Instance 0 (I/O Set 1)</h3>
+<div class="table"><table class="generic">
+ <thead><tr class="qt-style"><th >Pin</th><th >Use</th></tr></thead>
+<tr valign="top" class="odd"><td >PD10A</td><td >MISO</td></tr>
+<tr valign="top" class="even"><td >PD11A</td><td >MOSI</td></tr>
+<tr valign="top" class="odd"><td >PD12A</td><td >SPCK</td></tr>
+<tr valign="top" class="even"><td >PD13A</td><td >NPCS0</td></tr>
+<tr valign="top" class="odd"><td >PD14B</td><td >NPCS1</td></tr>
+<tr valign="top" class="even"><td >PD15B</td><td >NPCS2</td></tr>
+<tr valign="top" class="odd"><td >PD16B</td><td >NPCS3</td></tr>
+</table></div>
+<a name="pin-list-for-spi-serial-flash-instance-1-i-o-set-1"></a>
+<h3 >Pin List for SPI Serial Flash Instance 1 (I/O Set 1)</h3>
+<div class="table"><table class="generic">
+ <thead><tr class="qt-style"><th >Pin</th><th >Use</th></tr></thead>
+<tr valign="top" class="odd"><td >PC22A</td><td >MISO</td></tr>
+<tr valign="top" class="even"><td >PC23A</td><td >MOSI</td></tr>
+<tr valign="top" class="odd"><td >PC24A</td><td >SPCK</td></tr>
+<tr valign="top" class="even"><td >PC25A</td><td >NPCS0</td></tr>
+<tr valign="top" class="odd"><td >PC26A</td><td >NPCS1</td></tr>
+<tr valign="top" class="even"><td >PC27A</td><td >NPCS2</td></tr>
+<tr valign="top" class="odd"><td >PC28A</td><td >NPCS3</td></tr>
+</table></div>
+<a name="nand-flash-configuration"></a>
+<h2 id="nand-flash-configuration">NAND Flash Configuration</h2>
+<p>The following NAND Flash configurations are supported:</p>
+<div class="table"><table class="generic">
+ <thead><tr class="qt-style"><th >I/O Set</th><th >Bus Width</th></tr></thead>
+<tr valign="top" class="odd"><td >1</td><td >8-bit, 16-bit</td></tr>
+</table></div>
+<a name="pin-list-for-nand-flash-i-o-set-1"></a>
+<h3 >Pin List for NAND Flash (I/O Set 1)</h3>
+<div class="table"><table class="generic">
+ <thead><tr class="qt-style"><th >Pin</th><th >Use</th><th >Bus Width</th></tr></thead>
+<tr valign="top" class="odd"><td >PE21A</td><td >NANDALE</td><td >8-bit, 16-bit</td></tr>
+<tr valign="top" class="even"><td >PE22A</td><td >NANDCLE</td><td >8-bit, 16-bit</td></tr>
+</table></div>
+<p>Other NAND pins are not muxed by the PIO controller.</p>
+<!-- @@@SAMA5D3Config -->
+<h2>Property Documentation</h2>
+<!-- $$$extram -->
+<div class="qmlitem"><div class="qmlproto">
+<div class="table"><table class="qmlname">
+<tr valign="top" class="odd" id="extram-prop">
+<td class="tblQmlPropNode"><p>
+<a name="extram-prop"></a><span class="name">extram</span> : <span class="type">alias</span></p></td></tr>
+</table></div>
+</div><div class="qmldoc"><p>Configuration for external RAM applet</p>
+<p>See <a href="qml-samba-applet-extramconfig.html">ExtRamConfig</a> for a list of configurable properties.</p>
+</div></div><!-- @@@extram -->
+<br/>
+<!-- $$$nandflash -->
+<div class="qmlitem"><div class="qmlproto">
+<div class="table"><table class="qmlname">
+<tr valign="top" class="odd" id="nandflash-prop">
+<td class="tblQmlPropNode"><p>
+<a name="nandflash-prop"></a><span class="name">nandflash</span> : <span class="type">alias</span></p></td></tr>
+</table></div>
+</div><div class="qmldoc"><p>Configuration for NAND Flash applet</p>
+<p>See <a href="qml-samba-applet-nandflashconfig.html">NANDFlashConfig</a> for a list of configurable properties.</p>
+</div></div><!-- @@@nandflash -->
+<br/>
+<!-- $$$sdmmc -->
+<div class="qmlitem"><div class="qmlproto">
+<div class="table"><table class="qmlname">
+<tr valign="top" class="odd" id="sdmmc-prop">
+<td class="tblQmlPropNode"><p>
+<a name="sdmmc-prop"></a><span class="name">sdmmc</span> : <span class="type">alias</span></p></td></tr>
+</table></div>
+</div><div class="qmldoc"><p>Configuration for SD/MMC applet</p>
+<p>See <a href="qml-samba-applet-sdmmcconfig.html">SDMMCConfig</a> for a list of configurable properties.</p>
+</div></div><!-- @@@sdmmc -->
+<br/>
+<!-- $$$serial -->
+<div class="qmlitem"><div class="qmlproto">
+<div class="table"><table class="qmlname">
+<tr valign="top" class="odd" id="serial-prop">
+<td class="tblQmlPropNode"><p>
+<a name="serial-prop"></a><span class="name">serial</span> : <span class="type">alias</span></p></td></tr>
+</table></div>
+</div><div class="qmldoc"><p>Configuration for applet serial console output</p>
+<p>See <a href="qml-samba-applet-serialconfig.html">SerialConfig</a> for a list of configurable properties.</p>
+</div></div><!-- @@@serial -->
+<br/>
+<!-- $$$serialflash -->
+<div class="qmlitem"><div class="qmlproto">
+<div class="table"><table class="qmlname">
+<tr valign="top" class="odd" id="serialflash-prop">
+<td class="tblQmlPropNode"><p>
+<a name="serialflash-prop"></a><span class="name">serialflash</span> : <span class="type">alias</span></p></td></tr>
+</table></div>
+</div><div class="qmldoc"><p>Configuration for SPI Serial Flash applet</p>
+<p>See <a href="qml-samba-applet-serialflashconfig.html">SerialFlashConfig</a> for a list of configurable properties.</p>
+</div></div><!-- @@@serialflash -->
+<br/>
+<p /><address><hr /><div align="center">
+<table width="100%" cellspacing="0" border="0"><tr class="address">
+<td width="60%" align="left">Copyright &copy; 2015-2017 Atmel Corporation</td>
+<td width="40%" align="right"><div align="right">SAM-BA Documentation</div></td>
+</tr></table></div></address></body>
+</html>

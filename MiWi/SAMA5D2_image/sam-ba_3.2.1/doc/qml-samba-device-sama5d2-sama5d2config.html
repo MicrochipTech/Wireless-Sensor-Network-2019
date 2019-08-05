@@ -1,0 +1,531 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<!-- SAMA5D2Config.qml -->
+  <title>SAMA5D2Config QML Type | SAM-BA 3.2</title>
+  <link rel="stylesheet" type="text/css" href="style/style.css" />
+</head>
+<table border="0" cellpadding="0" cellspacing="0" width="100%">
+<tr>
+<td class="postheader" valign="center"> <a href="index.html">Home</a> &middot; </td></tr></table><div class="sidebar">
+<div class="toc">
+<h3><a name="toc">Contents</a></h3>
+<ul>
+<li class="level1"><a href="#properties">Properties</a></li>
+<li class="level1"><a href="#details">Detailed Description</a></li>
+<li class="level2"><a href="#serial-console-configuration">Serial Console Configuration</a></li>
+<li class="level2"><a href="#external-ram">External RAM</a></li>
+<li class="level2"><a href="#sd-mmc-configuration">SD/MMC Configuration</a></li>
+<li class="level3"><a href="#pin-list-for-sd-mmc-instance-0-i-o-set-1">Pin List for SD/MMC Instance 0 (I/O Set 1)</a></li>
+<li class="level3"><a href="#pin-list-for-sd-mmc-instance-1-i-o-set-1">Pin List for SD/MMC Instance 1 (I/O Set 1)</a></li>
+<li class="level2"><a href="#spi-serial-flash-configuration">SPI Serial Flash Configuration</a></li>
+<li class="level3"><a href="#pin-list-for-spi-serial-flash-instance-0-i-o-set-1">Pin List for SPI Serial Flash Instance 0 (I/O Set 1)</a></li>
+<li class="level3"><a href="#pin-list-for-spi-serial-flash-instance-0-i-o-set-2">Pin List for SPI Serial Flash Instance 0 (I/O Set 2)</a></li>
+<li class="level3"><a href="#pin-list-for-spi-serial-flash-instance-1-i-o-set-1">Pin List for SPI Serial Flash Instance 1 (I/O Set 1)</a></li>
+<li class="level3"><a href="#pin-list-for-spi-serial-flash-instance-1-i-o-set-2">Pin List for SPI Serial Flash Instance 1 (I/O Set 2)</a></li>
+<li class="level3"><a href="#pin-list-for-spi-serial-flash-instance-1-i-o-set-3">Pin List for SPI Serial Flash Instance 1 (I/O Set 3)</a></li>
+<li class="level3"><a href="#pin-list-for-spi-serial-flash-instance-2-i-o-set-1">Pin List for SPI Serial Flash Instance 2 (I/O Set 1)</a></li>
+<li class="level3"><a href="#pin-list-for-spi-serial-flash-instance-3-i-o-set-1">Pin List for SPI Serial Flash Instance 3 (I/O Set 1)</a></li>
+<li class="level3"><a href="#pin-list-for-spi-serial-flash-instance-4-i-o-set-1">Pin List for SPI Serial Flash Instance 4 (I/O Set 1)</a></li>
+<li class="level3"><a href="#pin-list-for-spi-serial-flash-instance-4-i-o-set-2">Pin List for SPI Serial Flash Instance 4 (I/O Set 2)</a></li>
+<li class="level3"><a href="#pin-list-for-spi-serial-flash-instance-5-i-o-set-1">Pin List for SPI Serial Flash Instance 5 (I/O Set 1)</a></li>
+<li class="level3"><a href="#pin-list-for-spi-serial-flash-instance-5-i-o-set-2">Pin List for SPI Serial Flash Instance 5 (I/O Set 2)</a></li>
+<li class="level3"><a href="#pin-list-for-spi-serial-flash-instance-5-i-o-set-3">Pin List for SPI Serial Flash Instance 5 (I/O Set 3)</a></li>
+<li class="level3"><a href="#pin-list-for-spi-serial-flash-instance-6-i-o-set-1">Pin List for SPI Serial Flash Instance 6 (I/O Set 1)</a></li>
+<li class="level3"><a href="#pin-list-for-spi-serial-flash-instance-6-i-o-set-2">Pin List for SPI Serial Flash Instance 6 (I/O Set 2)</a></li>
+<li class="level3"><a href="#pin-list-for-spi-serial-flash-instance-6-i-o-set-3">Pin List for SPI Serial Flash Instance 6 (I/O Set 3)</a></li>
+<li class="level2"><a href="#nand-flash-configuration">NAND Flash Configuration</a></li>
+<li class="level3"><a href="#pin-list-for-nand-flash-i-o-set-1">Pin List for NAND Flash (I/O Set 1)</a></li>
+<li class="level3"><a href="#pin-list-for-nand-flash-i-o-set-2">Pin List for NAND Flash (I/O Set 2)</a></li>
+<li class="level2"><a href="#qspi-flash-configuration">QSPI Flash Configuration</a></li>
+<li class="level3"><a href="#pin-list-for-qspi-serial-flash-instance-0-i-o-set-1">Pin List for QSPI Serial Flash Instance 0 (I/O Set 1)</a></li>
+<li class="level3"><a href="#pin-list-for-qspi-serial-flash-instance-0-i-o-set-2">Pin List for QSPI Serial Flash Instance 0 (I/O Set 2)</a></li>
+<li class="level3"><a href="#pin-list-for-qspi-serial-flash-instance-0-i-o-set-3">Pin List for QSPI Serial Flash Instance 0 (I/O Set 3)</a></li>
+<li class="level3"><a href="#pin-list-for-qspi-serial-flash-instance-1-i-o-set-1">Pin List for QSPI Serial Flash Instance 1 (I/O Set 1)</a></li>
+<li class="level3"><a href="#pin-list-for-qspi-serial-flash-instance-1-i-o-set-2">Pin List for QSPI Serial Flash Instance 1 (I/O Set 2)</a></li>
+<li class="level3"><a href="#pin-list-for-qspi-serial-flash-instance-1-i-o-set-3">Pin List for QSPI Serial Flash Instance 1 (I/O Set 3)</a></li>
+</ul>
+</div>
+<div class="sidebar-content" id="sidebar-content"></div></div>
+<h1 class="title">SAMA5D2Config QML Type</h1>
+<span class="subtitle"></span>
+<!-- $$$SAMA5D2Config-brief -->
+<p>Contains configuration values for a SAMA5D2 device. <a href="#details">More...</a></p>
+<!-- @@@SAMA5D2Config -->
+<div class="table"><table class="alignedsummary">
+<tr><td class="memItemLeft rightAlign topAlign"> Import Statement:</td><td class="memItemRight bottomAlign"> import SAMBA.Device.SAMA5D2 3.2</td></tr></table></div><ul>
+<li><a href="qml-samba-device-sama5d2-sama5d2config-members.html">List of all members, including inherited members</a></li>
+</ul>
+<a name="properties"></a>
+<h2 id="properties">Properties</h2>
+<ul>
+<li class="fn"><b><b><a href="qml-samba-device-sama5d2-sama5d2config.html#extram-prop">extram</a></b></b> : alias</li>
+<li class="fn"><b><b><a href="qml-samba-device-sama5d2-sama5d2config.html#nandflash-prop">nandflash</a></b></b> : alias</li>
+<li class="fn"><b><b><a href="qml-samba-device-sama5d2-sama5d2config.html#qspiflash-prop">qspiflash</a></b></b> : alias</li>
+<li class="fn"><b><b><a href="qml-samba-device-sama5d2-sama5d2config.html#sdmmc-prop">sdmmc</a></b></b> : alias</li>
+<li class="fn"><b><b><a href="qml-samba-device-sama5d2-sama5d2config.html#serial-prop">serial</a></b></b> : alias</li>
+<li class="fn"><b><b><a href="qml-samba-device-sama5d2-sama5d2config.html#serialflash-prop">serialflash</a></b></b> : alias</li>
+</ul>
+<!-- $$$SAMA5D2Config-description -->
+<a name="details"></a>
+<h2 id="details">Detailed Description</h2>
+<p>By default, no configuration values are set.</p>
+<a name="serial-console-configuration"></a>
+<h2 id="serial-console-configuration">Serial Console Configuration</h2>
+<p>The following serial console configurations are supported:</p>
+<div class="table"><table class="generic">
+ <thead><tr class="qt-style"><th >Instance</th><th >Peripheral</th><th >I/O Set</th><th >TX Pin</th></tr></thead>
+<tr valign="top" class="odd"><td >0</td><td >UART0</td><td >1</td><td >PB27C</td></tr>
+<tr valign="top" class="even"><td >1</td><td >UART1</td><td >1</td><td >PD3A</td></tr>
+<tr valign="top" class="odd"><td >1</td><td >UART1</td><td >2</td><td >PC8E</td></tr>
+<tr valign="top" class="even"><td >2</td><td >UART2</td><td >1</td><td >PD5B</td></tr>
+<tr valign="top" class="odd"><td >2</td><td >UART2</td><td >2</td><td >PD24A</td></tr>
+<tr valign="top" class="even"><td >2</td><td >UART2</td><td >3</td><td >PD20C</td></tr>
+<tr valign="top" class="odd"><td >3</td><td >UART3</td><td >1</td><td >PC13D</td></tr>
+<tr valign="top" class="even"><td >3</td><td >UART3</td><td >2</td><td >PD0C</td></tr>
+<tr valign="top" class="odd"><td >3</td><td >UART3</td><td >3</td><td >PB12C</td></tr>
+<tr valign="top" class="even"><td >4</td><td >UART4</td><td >1</td><td >PB4A</td></tr>
+<tr valign="top" class="odd"><td >5</td><td >FLEXCOM0</td><td >1</td><td >PB28C</td></tr>
+<tr valign="top" class="even"><td >6</td><td >FLEXCOM1</td><td >1</td><td >PA24A</td></tr>
+<tr valign="top" class="odd"><td >7</td><td >FLEXCOM2</td><td >1</td><td >PA6E</td></tr>
+<tr valign="top" class="even"><td >7</td><td >FLEXCOM2</td><td >2</td><td >PD26C</td></tr>
+<tr valign="top" class="odd"><td >8</td><td >FLEXCOM3</td><td >1</td><td >PA15E</td></tr>
+<tr valign="top" class="even"><td >8</td><td >FLEXCOM3</td><td >2</td><td >PC20E</td></tr>
+<tr valign="top" class="odd"><td >8</td><td >FLEXCOM3</td><td >3</td><td >PB23E</td></tr>
+<tr valign="top" class="even"><td >9</td><td >FLEXCOM4</td><td >1</td><td >PC28B</td></tr>
+<tr valign="top" class="odd"><td >9</td><td >FLEXCOM4</td><td >2</td><td >PD12B</td></tr>
+<tr valign="top" class="even"><td >9</td><td >FLEXCOM4</td><td >3</td><td >PD21C</td></tr>
+</table></div>
+<a name="external-ram"></a>
+<h2 id="external-ram">External RAM</h2>
+<p>The following external RAM configurations are supported:</p>
+<div class="table"><table class="generic">
+ <thead><tr class="qt-style"><th >Preset</th><th >Type</th><th >Model</th><th >Size</th></tr></thead>
+<tr valign="top" class="odd"><td >0</td><td >DDR2</td><td >MT47H128M8</td><td >4x128MB</td></tr>
+<tr valign="top" class="even"><td >1</td><td >DDR2</td><td >MT47H64M16</td><td >128MB</td></tr>
+<tr valign="top" class="odd"><td >2</td><td >DDR2</td><td >MT47H128M16</td><td >2x256MB</td></tr>
+<tr valign="top" class="even"><td >2</td><td >LPDDR2</td><td >MT42L128M16</td><td >2*256MB</td></tr>
+<tr valign="top" class="odd"><td >4</td><td >DDR3</td><td >MT41K128M16</td><td >2*256MB</td></tr>
+<tr valign="top" class="even"><td >5</td><td >LPDDR3</td><td >EDF8164A3MA</td><td >2*256MB</td></tr>
+<tr valign="top" class="odd"><td >8</td><td >DDR2</td><td >W971G16SG</td><td >128MB</td></tr>
+<tr valign="top" class="even"><td >9</td><td >DDR2</td><td >W972GG6KB</td><td >2*256MB</td></tr>
+</table></div>
+<a name="sd-mmc-configuration"></a>
+<h2 id="sd-mmc-configuration">SD/MMC Configuration</h2>
+<p>The following SD/MMC configurations are supported:</p>
+<div class="table"><table class="generic">
+ <thead><tr class="qt-style"><th >Instance</th><th >Peripheral</th><th >I/O Set</th><th >Bus Width</th><th >Voltage Switch Support</th></tr></thead>
+<tr valign="top" class="odd"><td >0</td><td >SDMMC0</td><td >1</td><td >1-bit, 4-bit, 8-bit</td><td >yes</td></tr>
+<tr valign="top" class="even"><td >1</td><td >SDMMC1</td><td >1</td><td >1-bit, 4-bit</td><td >no</td></tr>
+</table></div>
+<a name="pin-list-for-sd-mmc-instance-0-i-o-set-1"></a>
+<h3 >Pin List for SD/MMC Instance 0 (I/O Set 1)</h3>
+<div class="table"><table class="generic">
+ <thead><tr class="qt-style"><th >Pin</th><th >Use</th></tr></thead>
+<tr valign="top" class="odd"><td >PA0A</td><td >Clock</td></tr>
+<tr valign="top" class="even"><td >PA1A</td><td >Command</td></tr>
+<tr valign="top" class="odd"><td >PA2A</td><td >Data 0 (bus width: 1-bit, 4-bit, 8-bit)</td></tr>
+<tr valign="top" class="even"><td >PA3A</td><td >Data 1 (bus width: 4-bit, 8-bit)</td></tr>
+<tr valign="top" class="odd"><td >PA4A</td><td >Data 2 (bus width: 4-bit, 8-bit)</td></tr>
+<tr valign="top" class="even"><td >PA5A</td><td >Data 3 (bus width: 4-bit, 8-bit)</td></tr>
+<tr valign="top" class="odd"><td >PA6A</td><td >Data 4 (bus width: 8-bit)</td></tr>
+<tr valign="top" class="even"><td >PA7A</td><td >Data 5 (bus width: 8-bit)</td></tr>
+<tr valign="top" class="odd"><td >PA8A</td><td >Data 6 (bus width: 8-bit)</td></tr>
+<tr valign="top" class="even"><td >PA9A</td><td >Data 7 (bus width: 8-bit)</td></tr>
+<tr valign="top" class="odd"><td >PA11A</td><td >VDD Selection</td></tr>
+</table></div>
+<a name="pin-list-for-sd-mmc-instance-1-i-o-set-1"></a>
+<h3 >Pin List for SD/MMC Instance 1 (I/O Set 1)</h3>
+<div class="table"><table class="generic">
+ <thead><tr class="qt-style"><th >Pin</th><th >Use</th></tr></thead>
+<tr valign="top" class="odd"><td >PA22E</td><td >Clock</td></tr>
+<tr valign="top" class="even"><td >PA28E</td><td >Command</td></tr>
+<tr valign="top" class="odd"><td >PA18E</td><td >Data 0 (bus width: 1-bit, 4-bit)</td></tr>
+<tr valign="top" class="even"><td >PA19E</td><td >Data 1 (bus width: 4-bit)</td></tr>
+<tr valign="top" class="odd"><td >PA20E</td><td >Data 2 (bus width: 4-bit)</td></tr>
+<tr valign="top" class="even"><td >PA21E</td><td >Data 3 (bus width: 4-bit)</td></tr>
+</table></div>
+<a name="spi-serial-flash-configuration"></a>
+<h2 id="spi-serial-flash-configuration">SPI Serial Flash Configuration</h2>
+<p>The following SPI Serial Flash configurations are supported:</p>
+<div class="table"><table class="generic">
+ <thead><tr class="qt-style"><th >Instance</th><th >Peripheral</th><th >I/O Set</th><th >Chip Selects</th></tr></thead>
+<tr valign="top" class="odd"><td >0</td><td >SPI0</td><td >1, 2</td><td >0, 1, 2, 3</td></tr>
+<tr valign="top" class="even"><td >1</td><td >SPI1</td><td >1, 2</td><td >0, 1, 2, 3</td></tr>
+<tr valign="top" class="odd"><td >1</td><td >SPI1</td><td >3</td><td >0, 1, 2</td></tr>
+<tr valign="top" class="even"><td >2</td><td >FLEXCOM0</td><td >1</td><td >0, 1</td></tr>
+<tr valign="top" class="odd"><td >3</td><td >FLEXCOM1</td><td >1</td><td >0, 1</td></tr>
+<tr valign="top" class="even"><td >4</td><td >FLEXCOM2</td><td >1, 2</td><td >0, 1</td></tr>
+<tr valign="top" class="odd"><td >5</td><td >FLEXCOM3</td><td >1, 2, 3</td><td >0, 1</td></tr>
+<tr valign="top" class="even"><td >6</td><td >FLEXCOM4</td><td >1, 2, 3</td><td >0, 1</td></tr>
+</table></div>
+<a name="pin-list-for-spi-serial-flash-instance-0-i-o-set-1"></a>
+<h3 >Pin List for SPI Serial Flash Instance 0 (I/O Set 1)</h3>
+<div class="table"><table class="generic">
+ <thead><tr class="qt-style"><th >Pin</th><th >Use</th></tr></thead>
+<tr valign="top" class="odd"><td >PA16A</td><td >MISO</td></tr>
+<tr valign="top" class="even"><td >PA15A</td><td >MOSI</td></tr>
+<tr valign="top" class="odd"><td >PA14A</td><td >SPCK</td></tr>
+<tr valign="top" class="even"><td >PA17A</td><td >NPCS0</td></tr>
+<tr valign="top" class="odd"><td >PA18A</td><td >NPCS1</td></tr>
+<tr valign="top" class="even"><td >PA19A</td><td >NPCS2</td></tr>
+<tr valign="top" class="odd"><td >PA20A</td><td >NPCS3</td></tr>
+</table></div>
+<a name="pin-list-for-spi-serial-flash-instance-0-i-o-set-2"></a>
+<h3 >Pin List for SPI Serial Flash Instance 0 (I/O Set 2)</h3>
+<div class="table"><table class="generic">
+ <thead><tr class="qt-style"><th >Pin</th><th >Use</th></tr></thead>
+<tr valign="top" class="odd"><td >PA31C</td><td >MISO</td></tr>
+<tr valign="top" class="even"><td >PB0C</td><td >MOSI</td></tr>
+<tr valign="top" class="odd"><td >PB1C</td><td >SPCK</td></tr>
+<tr valign="top" class="even"><td >PA30C</td><td >NPCS0</td></tr>
+<tr valign="top" class="odd"><td >PA29C</td><td >NPCS1</td></tr>
+<tr valign="top" class="even"><td >PA27C</td><td >NPCS2</td></tr>
+<tr valign="top" class="odd"><td >PA28C</td><td >NPCS3</td></tr>
+</table></div>
+<a name="pin-list-for-spi-serial-flash-instance-1-i-o-set-1"></a>
+<h3 >Pin List for SPI Serial Flash Instance 1 (I/O Set 1)</h3>
+<div class="table"><table class="generic">
+ <thead><tr class="qt-style"><th >Pin</th><th >Use</th></tr></thead>
+<tr valign="top" class="odd"><td >PC3D</td><td >MISO</td></tr>
+<tr valign="top" class="even"><td >PC2D</td><td >MOSI</td></tr>
+<tr valign="top" class="odd"><td >PC1D</td><td >SPCK</td></tr>
+<tr valign="top" class="even"><td >PC4D</td><td >NPCS0</td></tr>
+<tr valign="top" class="odd"><td >PC5D</td><td >NPCS1</td></tr>
+<tr valign="top" class="even"><td >PC6D</td><td >NPCS2</td></tr>
+<tr valign="top" class="odd"><td >PC7D</td><td >NPCS3</td></tr>
+</table></div>
+<a name="pin-list-for-spi-serial-flash-instance-1-i-o-set-2"></a>
+<h3 >Pin List for SPI Serial Flash Instance 1 (I/O Set 2)</h3>
+<div class="table"><table class="generic">
+ <thead><tr class="qt-style"><th >Pin</th><th >Use</th></tr></thead>
+<tr valign="top" class="odd"><td >PA24D</td><td >MISO</td></tr>
+<tr valign="top" class="even"><td >PA23D</td><td >MOSI</td></tr>
+<tr valign="top" class="odd"><td >PA22D</td><td >SPCK</td></tr>
+<tr valign="top" class="even"><td >PA25D</td><td >NPCS0</td></tr>
+<tr valign="top" class="odd"><td >PA26D</td><td >NPCS1</td></tr>
+<tr valign="top" class="even"><td >PA27D</td><td >NPCS2</td></tr>
+<tr valign="top" class="odd"><td >PA28D</td><td >NPCS3</td></tr>
+</table></div>
+<a name="pin-list-for-spi-serial-flash-instance-1-i-o-set-3"></a>
+<h3 >Pin List for SPI Serial Flash Instance 1 (I/O Set 3)</h3>
+<div class="table"><table class="generic">
+ <thead><tr class="qt-style"><th >Pin</th><th >Use</th></tr></thead>
+<tr valign="top" class="odd"><td >PD27A</td><td >MISO</td></tr>
+<tr valign="top" class="even"><td >PD26A</td><td >MOSI</td></tr>
+<tr valign="top" class="odd"><td >PD25A</td><td >SPCK</td></tr>
+<tr valign="top" class="even"><td >PD28A</td><td >NPCS0</td></tr>
+<tr valign="top" class="odd"><td >PD29A</td><td >NPCS1</td></tr>
+<tr valign="top" class="even"><td >PD30A</td><td >NPCS2</td></tr>
+</table></div>
+<a name="pin-list-for-spi-serial-flash-instance-2-i-o-set-1"></a>
+<h3 >Pin List for SPI Serial Flash Instance 2 (I/O Set 1)</h3>
+<div class="table"><table class="generic">
+ <thead><tr class="qt-style"><th >Pin</th><th >Use</th></tr></thead>
+<tr valign="top" class="odd"><td >PC28C</td><td >MOSI</td></tr>
+<tr valign="top" class="even"><td >PC29C</td><td >MISO</td></tr>
+<tr valign="top" class="odd"><td >PC30C</td><td >SPCK</td></tr>
+<tr valign="top" class="even"><td >PB31C</td><td >NPCS0</td></tr>
+<tr valign="top" class="odd"><td >PC0C</td><td >NPCS1</td></tr>
+</table></div>
+<a name="pin-list-for-spi-serial-flash-instance-3-i-o-set-1"></a>
+<h3 >Pin List for SPI Serial Flash Instance 3 (I/O Set 1)</h3>
+<div class="table"><table class="generic">
+ <thead><tr class="qt-style"><th >Pin</th><th >Use</th></tr></thead>
+<tr valign="top" class="odd"><td >PA24A</td><td >MOSI</td></tr>
+<tr valign="top" class="even"><td >PA23A</td><td >MISO</td></tr>
+<tr valign="top" class="odd"><td >PA22A</td><td >SPCK</td></tr>
+<tr valign="top" class="even"><td >PA25A</td><td >NPCS0</td></tr>
+<tr valign="top" class="odd"><td >PA26A</td><td >NPCS1</td></tr>
+</table></div>
+<a name="pin-list-for-spi-serial-flash-instance-4-i-o-set-1"></a>
+<h3 >Pin List for SPI Serial Flash Instance 4 (I/O Set 1)</h3>
+<div class="table"><table class="generic">
+ <thead><tr class="qt-style"><th >Pin</th><th >Use</th></tr></thead>
+<tr valign="top" class="odd"><td >PA6E</td><td >MOSI</td></tr>
+<tr valign="top" class="even"><td >PA7E</td><td >MISO</td></tr>
+<tr valign="top" class="odd"><td >PA8E</td><td >SPCK</td></tr>
+<tr valign="top" class="even"><td >PA9E</td><td >NPCS0</td></tr>
+<tr valign="top" class="odd"><td >PA10E</td><td >NPCS1</td></tr>
+</table></div>
+<a name="pin-list-for-spi-serial-flash-instance-4-i-o-set-2"></a>
+<h3 >Pin List for SPI Serial Flash Instance 4 (I/O Set 2)</h3>
+<div class="table"><table class="generic">
+ <thead><tr class="qt-style"><th >Pin</th><th >Use</th></tr></thead>
+<tr valign="top" class="odd"><td >PD26C</td><td >MOSI</td></tr>
+<tr valign="top" class="even"><td >PD27C</td><td >MISO</td></tr>
+<tr valign="top" class="odd"><td >PD28C</td><td >SPCK</td></tr>
+<tr valign="top" class="even"><td >PD29C</td><td >NPCS0</td></tr>
+<tr valign="top" class="odd"><td >PD30C</td><td >NPCS1</td></tr>
+</table></div>
+<a name="pin-list-for-spi-serial-flash-instance-5-i-o-set-1"></a>
+<h3 >Pin List for SPI Serial Flash Instance 5 (I/O Set 1)</h3>
+<div class="table"><table class="generic">
+ <thead><tr class="qt-style"><th >Pin</th><th >Use</th></tr></thead>
+<tr valign="top" class="odd"><td >PA15E</td><td >MOSI</td></tr>
+<tr valign="top" class="even"><td >PA13E</td><td >MISO</td></tr>
+<tr valign="top" class="odd"><td >PA14E</td><td >SPCK</td></tr>
+<tr valign="top" class="even"><td >PA16E</td><td >NPCS0</td></tr>
+<tr valign="top" class="odd"><td >PA17E</td><td >NPCS1</td></tr>
+</table></div>
+<a name="pin-list-for-spi-serial-flash-instance-5-i-o-set-2"></a>
+<h3 >Pin List for SPI Serial Flash Instance 5 (I/O Set 2)</h3>
+<div class="table"><table class="generic">
+ <thead><tr class="qt-style"><th >Pin</th><th >Use</th></tr></thead>
+<tr valign="top" class="odd"><td >PC20E</td><td >MOSI</td></tr>
+<tr valign="top" class="even"><td >PC19E</td><td >MISO</td></tr>
+<tr valign="top" class="odd"><td >PC18E</td><td >SPCK</td></tr>
+<tr valign="top" class="even"><td >PC21E</td><td >NPCS0</td></tr>
+<tr valign="top" class="odd"><td >PC22E</td><td >NPCS1</td></tr>
+</table></div>
+<a name="pin-list-for-spi-serial-flash-instance-5-i-o-set-3"></a>
+<h3 >Pin List for SPI Serial Flash Instance 5 (I/O Set 3)</h3>
+<div class="table"><table class="generic">
+ <thead><tr class="qt-style"><th >Pin</th><th >Use</th></tr></thead>
+<tr valign="top" class="odd"><td >PB23E</td><td >MOSI</td></tr>
+<tr valign="top" class="even"><td >PB22E</td><td >MISO</td></tr>
+<tr valign="top" class="odd"><td >PB21E</td><td >SPCK</td></tr>
+<tr valign="top" class="even"><td >PB24E</td><td >NPCS0</td></tr>
+<tr valign="top" class="odd"><td >PB25E</td><td >NPCS1</td></tr>
+</table></div>
+<a name="pin-list-for-spi-serial-flash-instance-6-i-o-set-1"></a>
+<h3 >Pin List for SPI Serial Flash Instance 6 (I/O Set 1)</h3>
+<div class="table"><table class="generic">
+ <thead><tr class="qt-style"><th >Pin</th><th >Use</th></tr></thead>
+<tr valign="top" class="odd"><td >PC28B</td><td >MOSI</td></tr>
+<tr valign="top" class="even"><td >PC29B</td><td >MISO</td></tr>
+<tr valign="top" class="odd"><td >PC30B</td><td >SPCK</td></tr>
+<tr valign="top" class="even"><td >PC31B</td><td >NPCS0</td></tr>
+<tr valign="top" class="odd"><td >PD0B</td><td >NPCS1</td></tr>
+</table></div>
+<a name="pin-list-for-spi-serial-flash-instance-6-i-o-set-2"></a>
+<h3 >Pin List for SPI Serial Flash Instance 6 (I/O Set 2)</h3>
+<div class="table"><table class="generic">
+ <thead><tr class="qt-style"><th >Pin</th><th >Use</th></tr></thead>
+<tr valign="top" class="odd"><td >PD12B</td><td >MOSI</td></tr>
+<tr valign="top" class="even"><td >PD13B</td><td >MISO</td></tr>
+<tr valign="top" class="odd"><td >PD14B</td><td >SPCK</td></tr>
+<tr valign="top" class="even"><td >PD15B</td><td >NPCS0</td></tr>
+<tr valign="top" class="odd"><td >PD16B</td><td >NPCS1</td></tr>
+</table></div>
+<a name="pin-list-for-spi-serial-flash-instance-6-i-o-set-3"></a>
+<h3 >Pin List for SPI Serial Flash Instance 6 (I/O Set 3)</h3>
+<div class="table"><table class="generic">
+ <thead><tr class="qt-style"><th >Pin</th><th >Use</th></tr></thead>
+<tr valign="top" class="odd"><td >PD21C</td><td >MOSI</td></tr>
+<tr valign="top" class="even"><td >PD22C</td><td >MISO</td></tr>
+<tr valign="top" class="odd"><td >PD23C</td><td >SPCK</td></tr>
+<tr valign="top" class="even"><td >PD24C</td><td >NPCS0</td></tr>
+<tr valign="top" class="odd"><td >PD25C</td><td >NPCS1</td></tr>
+</table></div>
+<a name="nand-flash-configuration"></a>
+<h2 id="nand-flash-configuration">NAND Flash Configuration</h2>
+<p>The following NAND Flash configurations are supported:</p>
+<div class="table"><table class="generic">
+ <thead><tr class="qt-style"><th >I/O Set</th><th >Bus Width</th></tr></thead>
+<tr valign="top" class="odd"><td >1, 2</td><td >8-bit, 16-bit</td></tr>
+</table></div>
+<a name="pin-list-for-nand-flash-i-o-set-1"></a>
+<h3 >Pin List for NAND Flash (I/O Set 1)</h3>
+<div class="table"><table class="generic">
+ <thead><tr class="qt-style"><th >Pin</th><th >Use</th><th >Bus Width</th></tr></thead>
+<tr valign="top" class="odd"><td >PA30B</td><td >NANDWE</td><td >8-bit, 16-bit</td></tr>
+<tr valign="top" class="even"><td >PA31B</td><td >NCS3</td><td >8-bit, 16-bit</td></tr>
+<tr valign="top" class="odd"><td >PB0B</td><td >NANDALE</td><td >8-bit, 16-bit</td></tr>
+<tr valign="top" class="even"><td >PB1B</td><td >NANDCLE</td><td >8-bit, 16-bit</td></tr>
+<tr valign="top" class="odd"><td >PB2B</td><td >NANDOE</td><td >8-bit, 16-bit</td></tr>
+<tr valign="top" class="even"><td >PC8B</td><td >NANDRDY</td><td >8-bit, 16-bit</td></tr>
+<tr valign="top" class="odd"><td >PA22B</td><td >D0</td><td >8-bit, 16-bit</td></tr>
+<tr valign="top" class="even"><td >PA23B</td><td >D1</td><td >8-bit, 16-bit</td></tr>
+<tr valign="top" class="odd"><td >PA24B</td><td >D2</td><td >8-bit, 16-bit</td></tr>
+<tr valign="top" class="even"><td >PA25B</td><td >D3</td><td >8-bit, 16-bit</td></tr>
+<tr valign="top" class="odd"><td >PA26B</td><td >D4</td><td >8-bit, 16-bit</td></tr>
+<tr valign="top" class="even"><td >PA27B</td><td >D5</td><td >8-bit, 16-bit</td></tr>
+<tr valign="top" class="odd"><td >PA28B</td><td >D6</td><td >8-bit, 16-bit</td></tr>
+<tr valign="top" class="even"><td >PA29B</td><td >D7</td><td >8-bit, 16-bit</td></tr>
+<tr valign="top" class="odd"><td >PB3B</td><td >D8</td><td >16-bit</td></tr>
+<tr valign="top" class="even"><td >PB4B</td><td >D9</td><td >16-bit</td></tr>
+<tr valign="top" class="odd"><td >PB5B</td><td >D10</td><td >16-bit</td></tr>
+<tr valign="top" class="even"><td >PB6B</td><td >D11</td><td >16-bit</td></tr>
+<tr valign="top" class="odd"><td >PB7B</td><td >D12</td><td >16-bit</td></tr>
+<tr valign="top" class="even"><td >PB8B</td><td >D13</td><td >16-bit</td></tr>
+<tr valign="top" class="odd"><td >PB9B</td><td >D14</td><td >16-bit</td></tr>
+<tr valign="top" class="even"><td >PB10B</td><td >D15</td><td >16-bit</td></tr>
+</table></div>
+<a name="pin-list-for-nand-flash-i-o-set-2"></a>
+<h3 >Pin List for NAND Flash (I/O Set 2)</h3>
+<div class="table"><table class="generic">
+ <thead><tr class="qt-style"><th >Pin</th><th >Use</th><th >Bus Width</th></tr></thead>
+<tr valign="top" class="odd"><td >PA8F</td><td >NANDWE</td><td >8-bit, 16-bit</td></tr>
+<tr valign="top" class="even"><td >PA9F</td><td >NCS3</td><td >8-bit, 16-bit</td></tr>
+<tr valign="top" class="odd"><td >PA10F</td><td >NANDALE</td><td >8-bit, 16-bit</td></tr>
+<tr valign="top" class="even"><td >PA11F</td><td >NANDCLE</td><td >8-bit, 16-bit</td></tr>
+<tr valign="top" class="odd"><td >PA12F</td><td >NANDOE</td><td >8-bit, 16-bit</td></tr>
+<tr valign="top" class="even"><td >PA21F</td><td >NANDRDY</td><td >8-bit, 16-bit</td></tr>
+<tr valign="top" class="odd"><td >PA0F</td><td >D0</td><td >8-bit, 16-bit</td></tr>
+<tr valign="top" class="even"><td >PA1F</td><td >D1</td><td >8-bit, 16-bit</td></tr>
+<tr valign="top" class="odd"><td >PA2F</td><td >D2</td><td >8-bit, 16-bit</td></tr>
+<tr valign="top" class="even"><td >PA3F</td><td >D3</td><td >8-bit, 16-bit</td></tr>
+<tr valign="top" class="odd"><td >PA4F</td><td >D4</td><td >8-bit, 16-bit</td></tr>
+<tr valign="top" class="even"><td >PA5F</td><td >D5</td><td >8-bit, 16-bit</td></tr>
+<tr valign="top" class="odd"><td >PA6F</td><td >D6</td><td >8-bit, 16-bit</td></tr>
+<tr valign="top" class="even"><td >PA7F</td><td >D7</td><td >8-bit, 16-bit</td></tr>
+<tr valign="top" class="odd"><td >PA12F</td><td >D8</td><td >16-bit</td></tr>
+<tr valign="top" class="even"><td >PA13F</td><td >D9</td><td >16-bit</td></tr>
+<tr valign="top" class="odd"><td >PA14F</td><td >D10</td><td >16-bit</td></tr>
+<tr valign="top" class="even"><td >PA15F</td><td >D11</td><td >16-bit</td></tr>
+<tr valign="top" class="odd"><td >PA16F</td><td >D12</td><td >16-bit</td></tr>
+<tr valign="top" class="even"><td >PA17F</td><td >D13</td><td >16-bit</td></tr>
+<tr valign="top" class="odd"><td >PA18F</td><td >D14</td><td >16-bit</td></tr>
+<tr valign="top" class="even"><td >PA18F</td><td >D15</td><td >16-bit</td></tr>
+</table></div>
+<a name="qspi-flash-configuration"></a>
+<h2 id="qspi-flash-configuration">QSPI Flash Configuration</h2>
+<p>The following QSPI Flash configurations are supported:</p>
+<div class="table"><table class="generic">
+ <thead><tr class="qt-style"><th >Instance</th><th >Peripheral</th><th >I/O Set</th></tr></thead>
+<tr valign="top" class="odd"><td >0</td><td >QSPI0</td><td >1, 2, 3</td></tr>
+<tr valign="top" class="even"><td >1</td><td >QSPI1</td><td >1, 2, 3</td></tr>
+</table></div>
+<a name="pin-list-for-qspi-serial-flash-instance-0-i-o-set-1"></a>
+<h3 >Pin List for QSPI Serial Flash Instance 0 (I/O Set 1)</h3>
+<div class="table"><table class="generic">
+ <thead><tr class="qt-style"><th >Pin</th><th >Use</th></tr></thead>
+<tr valign="top" class="odd"><td >PA0B</td><td >SCK</td></tr>
+<tr valign="top" class="even"><td >PA1B</td><td >CS</td></tr>
+<tr valign="top" class="odd"><td >PA2B</td><td >IO0</td></tr>
+<tr valign="top" class="even"><td >PA3B</td><td >IO1</td></tr>
+<tr valign="top" class="odd"><td >PA4B</td><td >IO2</td></tr>
+<tr valign="top" class="even"><td >PA5B</td><td >IO3</td></tr>
+</table></div>
+<a name="pin-list-for-qspi-serial-flash-instance-0-i-o-set-2"></a>
+<h3 >Pin List for QSPI Serial Flash Instance 0 (I/O Set 2)</h3>
+<div class="table"><table class="generic">
+ <thead><tr class="qt-style"><th >Pin</th><th >Use</th></tr></thead>
+<tr valign="top" class="odd"><td >PA14C</td><td >SCK</td></tr>
+<tr valign="top" class="even"><td >PA15C</td><td >CS</td></tr>
+<tr valign="top" class="odd"><td >PA16C</td><td >IO0</td></tr>
+<tr valign="top" class="even"><td >PA17C</td><td >IO1</td></tr>
+<tr valign="top" class="odd"><td >PA18C</td><td >IO2</td></tr>
+<tr valign="top" class="even"><td >PA19C</td><td >IO3</td></tr>
+</table></div>
+<a name="pin-list-for-qspi-serial-flash-instance-0-i-o-set-3"></a>
+<h3 >Pin List for QSPI Serial Flash Instance 0 (I/O Set 3)</h3>
+<div class="table"><table class="generic">
+ <thead><tr class="qt-style"><th >Pin</th><th >Use</th></tr></thead>
+<tr valign="top" class="odd"><td >PA22F</td><td >SCK</td></tr>
+<tr valign="top" class="even"><td >PA23F</td><td >CS</td></tr>
+<tr valign="top" class="odd"><td >PA24F</td><td >IO0</td></tr>
+<tr valign="top" class="even"><td >PA25F</td><td >IO1</td></tr>
+<tr valign="top" class="odd"><td >PA26F</td><td >IO2</td></tr>
+<tr valign="top" class="even"><td >PA27F</td><td >IO3</td></tr>
+</table></div>
+<a name="pin-list-for-qspi-serial-flash-instance-1-i-o-set-1"></a>
+<h3 >Pin List for QSPI Serial Flash Instance 1 (I/O Set 1)</h3>
+<div class="table"><table class="generic">
+ <thead><tr class="qt-style"><th >Pin</th><th >Use</th><th >I/O Sets</th></tr></thead>
+<tr valign="top" class="odd"><td >PA6B</td><td >SCK</td><td >1</td></tr>
+<tr valign="top" class="even"><td >PA11B</td><td >CS</td><td >1</td></tr>
+<tr valign="top" class="odd"><td >PA7B</td><td >IO0</td><td >1</td></tr>
+<tr valign="top" class="even"><td >PA8B</td><td >IO1</td><td >1</td></tr>
+<tr valign="top" class="odd"><td >PA9B</td><td >IO2</td><td >1</td></tr>
+<tr valign="top" class="even"><td >PA10B</td><td >IO3</td><td >1</td></tr>
+</table></div>
+<a name="pin-list-for-qspi-serial-flash-instance-1-i-o-set-2"></a>
+<h3 >Pin List for QSPI Serial Flash Instance 1 (I/O Set 2)</h3>
+<div class="table"><table class="generic">
+ <thead><tr class="qt-style"><th >Pin</th><th >Use</th><th >I/O Sets</th></tr></thead>
+<tr valign="top" class="odd"><td >PB5D</td><td >SCK</td><td >2</td></tr>
+<tr valign="top" class="even"><td >PB6D</td><td >CS</td><td >2</td></tr>
+<tr valign="top" class="odd"><td >PB7D</td><td >IO0</td><td >2</td></tr>
+<tr valign="top" class="even"><td >PB8D</td><td >IO1</td><td >2</td></tr>
+<tr valign="top" class="odd"><td >PB9D</td><td >IO2</td><td >2</td></tr>
+<tr valign="top" class="even"><td >PB10D</td><td >IO3</td><td >2</td></tr>
+</table></div>
+<a name="pin-list-for-qspi-serial-flash-instance-1-i-o-set-3"></a>
+<h3 >Pin List for QSPI Serial Flash Instance 1 (I/O Set 3)</h3>
+<div class="table"><table class="generic">
+ <thead><tr class="qt-style"><th >Pin</th><th >Use</th><th >I/O Sets</th></tr></thead>
+<tr valign="top" class="odd"><td >PB14E</td><td >SCK</td><td >3</td></tr>
+<tr valign="top" class="even"><td >PB15E</td><td >CS</td><td >3</td></tr>
+<tr valign="top" class="odd"><td >PB16E</td><td >IO0</td><td >3</td></tr>
+<tr valign="top" class="even"><td >PB17E</td><td >IO1</td><td >3</td></tr>
+<tr valign="top" class="odd"><td >PB18E</td><td >IO2</td><td >3</td></tr>
+<tr valign="top" class="even"><td >PB19E</td><td >IO3</td><td >3</td></tr>
+</table></div>
+<!-- @@@SAMA5D2Config -->
+<h2>Property Documentation</h2>
+<!-- $$$extram -->
+<div class="qmlitem"><div class="qmlproto">
+<div class="table"><table class="qmlname">
+<tr valign="top" class="odd" id="extram-prop">
+<td class="tblQmlPropNode"><p>
+<a name="extram-prop"></a><span class="name">extram</span> : <span class="type">alias</span></p></td></tr>
+</table></div>
+</div><div class="qmldoc"><p>Configuration for external RAM applet</p>
+<p>See <a href="qml-samba-applet-extramconfig.html">ExtRamConfig</a> for a list of configurable properties.</p>
+</div></div><!-- @@@extram -->
+<br/>
+<!-- $$$nandflash -->
+<div class="qmlitem"><div class="qmlproto">
+<div class="table"><table class="qmlname">
+<tr valign="top" class="odd" id="nandflash-prop">
+<td class="tblQmlPropNode"><p>
+<a name="nandflash-prop"></a><span class="name">nandflash</span> : <span class="type">alias</span></p></td></tr>
+</table></div>
+</div><div class="qmldoc"><p>Configuration for NAND Flash applet</p>
+<p>See <a href="qml-samba-applet-nandflashconfig.html">NANDFlashConfig</a> for a list of configurable properties.</p>
+</div></div><!-- @@@nandflash -->
+<br/>
+<!-- $$$qspiflash -->
+<div class="qmlitem"><div class="qmlproto">
+<div class="table"><table class="qmlname">
+<tr valign="top" class="odd" id="qspiflash-prop">
+<td class="tblQmlPropNode"><p>
+<a name="qspiflash-prop"></a><span class="name">qspiflash</span> : <span class="type">alias</span></p></td></tr>
+</table></div>
+</div><div class="qmldoc"><p>Configuration for QSPI Flash applet</p>
+<p>See <a href="qml-samba-applet-qspiflashconfig.html">QSPIFlashConfig</a> for a list of configurable properties.</p>
+</div></div><!-- @@@qspiflash -->
+<br/>
+<!-- $$$sdmmc -->
+<div class="qmlitem"><div class="qmlproto">
+<div class="table"><table class="qmlname">
+<tr valign="top" class="odd" id="sdmmc-prop">
+<td class="tblQmlPropNode"><p>
+<a name="sdmmc-prop"></a><span class="name">sdmmc</span> : <span class="type">alias</span></p></td></tr>
+</table></div>
+</div><div class="qmldoc"><p>Configuration for SD/MMC applet</p>
+<p>See <a href="qml-samba-applet-sdmmcconfig.html">SDMMCConfig</a> for a list of configurable properties.</p>
+</div></div><!-- @@@sdmmc -->
+<br/>
+<!-- $$$serial -->
+<div class="qmlitem"><div class="qmlproto">
+<div class="table"><table class="qmlname">
+<tr valign="top" class="odd" id="serial-prop">
+<td class="tblQmlPropNode"><p>
+<a name="serial-prop"></a><span class="name">serial</span> : <span class="type">alias</span></p></td></tr>
+</table></div>
+</div><div class="qmldoc"><p>Configuration for applet serial console output</p>
+<p>See <a href="qml-samba-applet-serialconfig.html">SerialConfig</a> for a list of configurable properties.</p>
+</div></div><!-- @@@serial -->
+<br/>
+<!-- $$$serialflash -->
+<div class="qmlitem"><div class="qmlproto">
+<div class="table"><table class="qmlname">
+<tr valign="top" class="odd" id="serialflash-prop">
+<td class="tblQmlPropNode"><p>
+<a name="serialflash-prop"></a><span class="name">serialflash</span> : <span class="type">alias</span></p></td></tr>
+</table></div>
+</div><div class="qmldoc"><p>Configuration for SPI Serial Flash applet</p>
+<p>See <a href="qml-samba-applet-serialflashconfig.html">SerialFlashConfig</a> for a list of configurable properties.</p>
+</div></div><!-- @@@serialflash -->
+<br/>
+<p /><address><hr /><div align="center">
+<table width="100%" cellspacing="0" border="0"><tr class="address">
+<td width="60%" align="left">Copyright &copy; 2015-2017 Atmel Corporation</td>
+<td width="40%" align="right"><div align="right">SAM-BA Documentation</div></td>
+</tr></table></div></address></body>
+</html>

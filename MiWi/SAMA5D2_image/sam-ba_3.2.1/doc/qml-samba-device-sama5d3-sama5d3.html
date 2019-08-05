@@ -1,0 +1,148 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<!-- SAMA5D3.qml -->
+  <title>SAMA5D3 QML Type | SAM-BA 3.2</title>
+  <link rel="stylesheet" type="text/css" href="style/style.css" />
+</head>
+<table border="0" cellpadding="0" cellspacing="0" width="100%">
+<tr>
+<td class="postheader" valign="center"> <a href="index.html">Home</a> &middot; </td></tr></table><div class="sidebar">
+<div class="toc">
+<h3><a name="toc">Contents</a></h3>
+<ul>
+<li class="level1"><a href="#properties">Properties</a></li>
+<li class="level1"><a href="#methods">Methods</a></li>
+<li class="level1"><a href="#details">Detailed Description</a></li>
+<li class="level2"><a href="#applets">Applets</a></li>
+<li class="level3"><a href="#low-level-applet">Low-Level Applet</a></li>
+<li class="level3"><a href="#external-ram-applet">External RAM Applet</a></li>
+<li class="level3"><a href="#sdmmc-applet">SDMMC Applet</a></li>
+<li class="level3"><a href="#serialflash-applet">SerialFlash Applet</a></li>
+<li class="level3"><a href="#nand-applet">NAND Applet</a></li>
+<li class="level2"><a href="#configuration">Configuration</a></li>
+<li class="level3"><a href="#board-selection">Board selection</a></li>
+<li class="level3"><a href="#custom-configuration">Custom configuration</a></li>
+</ul>
+</div>
+<div class="sidebar-content" id="sidebar-content"></div></div>
+<h1 class="title">SAMA5D3 QML Type</h1>
+<span class="subtitle"></span>
+<!-- $$$SAMA5D3-brief -->
+<p>Contains chip-specific information about SAMA5D3 device. <a href="#details">More...</a></p>
+<!-- @@@SAMA5D3 -->
+<div class="table"><table class="alignedsummary">
+<tr><td class="memItemLeft rightAlign topAlign"> Import Statement:</td><td class="memItemRight bottomAlign"> import SAMBA.Device.SAMA5D3 3.2</td></tr><tr><td class="memItemLeft rightAlign topAlign"> Inherits:</td><td class="memItemRight bottomAlign"> <p><a href="qml-samba-device.html">Device</a></p>
+</td></tr><tr><td class="memItemLeft rightAlign topAlign"> Inherited By:</td><td class="memItemRight bottomAlign"> <p><a href="qml-samba-device-sama5d3-sama5d3ek.html">SAMA5D3EK</a> and <a href="qml-samba-device-sama5d3-sama5d3xplained.html">SAMA5D3Xplained</a></p>
+</td></tr></table></div><ul>
+<li><a href="qml-samba-device-sama5d3-sama5d3-members.html">List of all members, including inherited members</a></li>
+</ul>
+<a name="properties"></a>
+<h2 id="properties">Properties</h2>
+<ul>
+<li class="fn"><b><b><a href="qml-samba-device-sama5d3-sama5d3.html#config-prop">config</a></b></b> : alias</li>
+</ul>
+<a name="methods"></a>
+<h2 id="methods">Methods</h2>
+<ul>
+<li class="fn"><b><b><a href="qml-samba-device-sama5d3-sama5d3.html#checkDeviceID-method">checkDeviceID</a></b></b>()</li>
+<li class="fn"><b><b><a href="qml-samba-device-sama5d3-sama5d3.html#initialize-method">initialize</a></b></b>()</li>
+</ul>
+<!-- $$$SAMA5D3-description -->
+<a name="details"></a>
+<h2 id="details">Detailed Description</h2>
+<p>This QML type contains configuration, applets and tools for supporting the SAMA5D3 device.</p>
+<a name="applets"></a>
+<h2 id="applets">Applets</h2>
+<p>SAM-BA uses small programs called &quot;Applets&quot; to initialize the device or flash external memories. Please see <a href="qml-samba-applet.html">SAMBA::Applet</a> for more information on the applet mechanism.</p>
+<a name="low-level-applet"></a>
+<h3 >Low-Level Applet</h3>
+<p>This applet is in charge of configuring the device clocks.</p>
+<p>The only supported command is &quot;init&quot;.</p>
+<a name="external-ram-applet"></a>
+<h3 >External RAM Applet</h3>
+<p>This applet is in charge of configuring the external RAM.</p>
+<p>The Low-Level applet must have been initialized first.</p>
+<p>The only supported command is &quot;init&quot;.</p>
+<p>Note: The external RAM is not needed for correct operation of the other applets. It is only provided as a way to upload and run user programs from external RAM.</p>
+<a name="sdmmc-applet"></a>
+<h3 >SDMMC Applet</h3>
+<p>This applet is used to read/write SD/MMC and e.MMC devices. It supports all HSMCI peripherals present on the SAMA5D3 device (see <a href="qml-samba-device-sama5d3-sama5d3config.html">SAMA5D3Config</a> for configuration information).</p>
+<p>Supported commands are &quot;init&quot;, &quot;read&quot; and &quot;write&quot;.</p>
+<a name="serialflash-applet"></a>
+<h3 >SerialFlash Applet</h3>
+<p>This applet is used to flash AT25 serial flash memories. It supports all SPI peripherals present on the SAMA5D3 device (see <a href="qml-samba-device-sama5d3-sama5d3config.html">SAMA5D3Config</a> for configuration information).</p>
+<p>Supported commands are &quot;init&quot;, &quot;read&quot;, &quot;write&quot; and &quot;blockErase&quot;.</p>
+<a name="nand-applet"></a>
+<h3 >NAND Applet</h3>
+<p>This applet is used to flash NAND memories (see <a href="qml-samba-device-sama5d2-sama5d2config.html">SAMA5D2Config</a> for configuration information).</p>
+<p>Supported commands are &quot;init&quot;, &quot;read&quot;, &quot;write&quot; and &quot;blockErase&quot;.</p>
+<a name="configuration"></a>
+<h2 id="configuration">Configuration</h2>
+<p>When creating an instance of the SAMA5D3 type, some configuration can be supplied. The configuration parameters are then used during applet initialization where relevant.</p>
+<a name="board-selection"></a>
+<h3 >Board selection</h3>
+<p>A set of pre-configured values can be selected by instanciating sub-classes of SAMA5D3. The following preset boards are available:</p>
+<div class="table"><table class="generic">
+ <thead><tr class="qt-style"><th >Command-Line Name</th><th >QML Name</th><th >Board Name</th></tr></thead>
+<tr valign="top" class="odd"><td >sama5d3-ek</td><td >SAMA5D3EK</td><td >SAMA5D3x-MB</td></tr>
+<tr valign="top" class="even"><td >sama5d3-xplained</td><td ><a href="qml-samba-device-sama5d3-sama5d3xplained.html">SAMA5D3Xplained</a></td><td >SAMA5D3 Xplained</td></tr>
+</table></div>
+<a name="custom-configuration"></a>
+<h3 >Custom configuration</h3>
+<p>Each configuration value can be set individually. Please see <a href="qml-samba-device-sama5d3-sama5d3config.html">SAMA5D3Config</a> for details on the configuration values.</p>
+<p>For example, the following QML snipplet configures a device using SPI1 on I/O set 2 and Chip Select 3 at 33Mhz:</p>
+<pre class="qml"><span class="type"><a href="qml-samba-device-sama5d3-sama5d3.html">SAMA5D3</a></span> {
+        <span class="type"><a href="qml-samba-device-sama5d3-sama5d3.html#config-prop">config</a></span> {
+                <span class="type">serialflash</span> {
+                        <span class="name">instance</span>: <span class="number">1</span>
+                        <span class="name">ioset</span>: <span class="number">1</span>
+                        <span class="name">chipSelect</span>: <span class="number">3</span>
+                        <span class="name">freq</span>: <span class="number">33</span>
+                }
+        }
+}</pre>
+<!-- @@@SAMA5D3 -->
+<h2>Property Documentation</h2>
+<!-- $$$config -->
+<div class="qmlitem"><div class="qmlproto">
+<div class="table"><table class="qmlname">
+<tr valign="top" class="odd" id="config-prop">
+<td class="tblQmlPropNode"><p>
+<a name="config-prop"></a><span class="name">config</span> : <span class="type">alias</span></p></td></tr>
+</table></div>
+</div><div class="qmldoc"><p>The device configuration used by applets (peripherals, I/O sets, etc.)</p>
+<p><b>See also </b><a href="qml-samba-device-sama5d3-sama5d3config.html">SAMA5D3Config</a>.</p>
+</div></div><!-- @@@config -->
+<br/>
+<h2>Method Documentation</h2>
+<!-- $$$checkDeviceID -->
+<div class="qmlitem"><div class="qmlproto">
+<div class="table"><table class="qmlname">
+<tr valign="top" class="odd" id="checkDeviceID-method">
+<td class="tblQmlFuncNode"><p>
+<a name="checkDeviceID-method"></a><span class="name">checkDeviceID</span>()</p></td></tr>
+</table></div>
+</div><div class="qmldoc"><p>Checks that the device is a SAMA5D3.</p>
+<p>Reads CHIPID_CIDR register using the current connection and display a warning if its value does not match the expected value for SAMA5D3.</p>
+</div></div><!-- @@@checkDeviceID -->
+<br/>
+<!-- $$$initialize -->
+<div class="qmlitem"><div class="qmlproto">
+<div class="table"><table class="qmlname">
+<tr valign="top" class="odd" id="initialize-method">
+<td class="tblQmlFuncNode"><p>
+<a name="initialize-method"></a><span class="name">initialize</span>()</p></td></tr>
+</table></div>
+</div><div class="qmldoc"><p>Initialize the SAMA5D3 device using the current connection.</p>
+<p>This method calls <a href="qml-samba-device-sama5d3-sama5d3.html#checkDeviceID-method">checkDeviceID</a>.</p>
+</div></div><!-- @@@initialize -->
+<br/>
+<p /><address><hr /><div align="center">
+<table width="100%" cellspacing="0" border="0"><tr class="address">
+<td width="60%" align="left">Copyright &copy; 2015-2017 Atmel Corporation</td>
+<td width="40%" align="right"><div align="right">SAM-BA Documentation</div></td>
+</tr></table></div></address></body>
+</html>

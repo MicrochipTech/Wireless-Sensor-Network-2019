@@ -1,0 +1,397 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<!-- Applet.qml -->
+  <title>Applet QML Type | SAM-BA 3.2</title>
+  <link rel="stylesheet" type="text/css" href="style/style.css" />
+</head>
+<table border="0" cellpadding="0" cellspacing="0" width="100%">
+<tr>
+<td class="postheader" valign="center"> <a href="index.html">Home</a> &middot; </td></tr></table><div class="sidebar">
+<div class="toc">
+<h3><a name="toc">Contents</a></h3>
+<ul>
+<li class="level1"><a href="#properties">Properties</a></li>
+<li class="level1"><a href="#methods">Methods</a></li>
+<li class="level1"><a href="#details">Detailed Description</a></li>
+</ul>
+</div>
+<div class="sidebar-content" id="sidebar-content"></div></div>
+<h1 class="title">Applet QML Type</h1>
+<span class="subtitle"></span>
+<!-- $$$Applet-brief -->
+<p>Contains a description of a SAM-BA Applet and its runtime variables <a href="#details">More...</a></p>
+<!-- @@@Applet -->
+<div class="table"><table class="alignedsummary">
+<tr><td class="memItemLeft rightAlign topAlign"> Import Statement:</td><td class="memItemRight bottomAlign"> import SAMBA 3.2</td></tr></table></div><ul>
+<li><a href="qml-samba-applet-members.html">List of all members, including inherited members</a></li>
+</ul>
+<a name="properties"></a>
+<h2 id="properties">Properties</h2>
+<ul>
+<li class="fn"><b><b><a href="qml-samba-applet.html#bufferAddr-prop">bufferAddr</a></b></b> : var</li>
+<li class="fn"><b><b><a href="qml-samba-applet.html#bufferPages-prop">bufferPages</a></b></b> : var</li>
+<li class="fn"><b><b><a href="qml-samba-applet.html#bufferSize-prop">bufferSize</a></b></b> : var</li>
+<li class="fn"><b><b><a href="qml-samba-applet.html#codeAddr-prop">codeAddr</a></b></b> : var</li>
+<li class="fn"><b><b><a href="qml-samba-applet.html#codeUrl-prop">codeUrl</a></b></b> : var</li>
+<li class="fn"><b><b><a href="qml-samba-applet.html#commands-prop">commands</a></b></b> : AppletCommand</li>
+<li class="fn"><b><b><a href="qml-samba-applet.html#connection-prop">connection</a></b></b> : var</li>
+<li class="fn"><b><b><a href="qml-samba-applet.html#description-prop">description</a></b></b> : var</li>
+<li class="fn"><b><b><a href="qml-samba-applet.html#device-prop">device</a></b></b> : var</li>
+<li class="fn"><b><b><a href="qml-samba-applet.html#entryAddr-prop">entryAddr</a></b></b> : var</li>
+<li class="fn"><b><b><a href="qml-samba-applet.html#eraseSupport-prop">eraseSupport</a></b></b> : var</li>
+<li class="fn"><b><b><a href="qml-samba-applet.html#mailboxAddr-prop">mailboxAddr</a></b></b> : var</li>
+<li class="fn"><b><b><a href="qml-samba-applet.html#memoryPages-prop">memoryPages</a></b></b> : var</li>
+<li class="fn"><b><b><a href="qml-samba-applet.html#memorySize-prop">memorySize</a></b></b> : var</li>
+<li class="fn"><b><b><a href="qml-samba-applet.html#name-prop">name</a></b></b> : var</li>
+<li class="fn"><b><b><a href="qml-samba-applet.html#nandHeader-prop">nandHeader</a></b></b> : var</li>
+<li class="fn"><b><b><a href="qml-samba-applet.html#paddingByte-prop">paddingByte</a></b></b> : var</li>
+<li class="fn"><b><b><a href="qml-samba-applet.html#pageSize-prop">pageSize</a></b></b> : var</li>
+<li class="fn"><b><b><a href="qml-samba-applet.html#trimPadding-prop">trimPadding</a></b></b> : var</li>
+</ul>
+<a name="methods"></a>
+<h2 id="methods">Methods</h2>
+<ul>
+<li class="fn">void <b><b><a href="qml-samba-applet.html#buildInitArgs-method">buildInitArgs</a></b></b>()</li>
+<li class="fn">AppletCommand <b><b><a href="qml-samba-applet.html#command-method">command</a></b></b>(string <i>name</i>)</li>
+<li class="fn">void <b><b><a href="qml-samba-applet.html#defaultInitArgs-method">defaultInitArgs</a></b></b>()</li>
+<li class="fn">void <b><b><a href="qml-samba-applet.html#erase-method">erase</a></b></b>(int <i>offset</i>, int <i>size</i>)</li>
+<li class="fn">bool <b><b><a href="qml-samba-applet.html#hasCommand-method">hasCommand</a></b></b>(string <i>name</i>)</li>
+<li class="fn">void <b><b><a href="qml-samba-applet.html#initialize-method">initialize</a></b></b>()</li>
+<li class="fn">void <b><b><a href="qml-samba-applet.html#prepareBootFile-method">prepareBootFile</a></b></b>(File <i>file</i>)</li>
+<li class="fn">void <b><b><a href="qml-samba-applet.html#read-method">read</a></b></b>(int <i>offset</i>, int <i>size</i>, string <i>fileName</i>)</li>
+<li class="fn">void <b><b><a href="qml-samba-applet.html#verify-method">verify</a></b></b>(int <i>offset</i>, string <i>fileName</i>, bool <i>bootFile</i>)</li>
+<li class="fn">void <b><b><a href="qml-samba-applet.html#write-method">write</a></b></b>(int <i>offset</i>, string <i>fileName</i>, bool <i>bootFile</i>)</li>
+<li class="fn">void <b><b><a href="qml-samba-applet.html#writeVerify-method">writeVerify</a></b></b>(int <i>offset</i>, string <i>fileName</i>, bool <i>bootFile</i>)</li>
+</ul>
+<!-- $$$Applet-description -->
+<a name="details"></a>
+<h2 id="details">Detailed Description</h2>
+<!-- @@@Applet -->
+<h2>Property Documentation</h2>
+<!-- $$$bufferAddr -->
+<div class="qmlitem"><div class="qmlproto">
+<div class="table"><table class="qmlname">
+<tr valign="top" class="odd" id="bufferAddr-prop">
+<td class="tblQmlPropNode"><p>
+<a name="bufferAddr-prop"></a><span class="name">bufferAddr</span> : <span class="type">var</span></p></td></tr>
+</table></div>
+</div><div class="qmldoc"><p>The address at which the applet buffer is located</p>
+</div></div><!-- @@@bufferAddr -->
+<br/>
+<!-- $$$bufferPages -->
+<div class="qmlitem"><div class="qmlproto">
+<div class="table"><table class="qmlname">
+<tr valign="top" class="odd" id="bufferPages-prop">
+<td class="tblQmlPropNode"><p>
+<a name="bufferPages-prop"></a><span class="name">bufferPages</span> : <span class="type">var</span></p></td></tr>
+</table></div>
+</div><div class="qmldoc"><p>The size of the applet buffer in pages</p>
+</div></div><!-- @@@bufferPages -->
+<br/>
+<!-- $$$bufferSize -->
+<div class="qmlitem"><div class="qmlproto">
+<div class="table"><table class="qmlname">
+<tr valign="top" class="odd" id="bufferSize-prop">
+<td class="tblQmlPropNode"><p>
+<a name="bufferSize-prop"></a><span class="name">bufferSize</span> : <span class="type">var</span></p></td></tr>
+</table></div>
+</div><div class="qmldoc"><p>The size of the applet buffer in bytes</p>
+</div></div><!-- @@@bufferSize -->
+<br/>
+<!-- $$$codeAddr -->
+<div class="qmlitem"><div class="qmlproto">
+<div class="table"><table class="qmlname">
+<tr valign="top" class="odd" id="codeAddr-prop">
+<td class="tblQmlPropNode"><p>
+<a name="codeAddr-prop"></a><span class="name">codeAddr</span> : <span class="type">var</span></p></td></tr>
+</table></div>
+</div><div class="qmldoc"><p>The applet loading address</p>
+</div></div><!-- @@@codeAddr -->
+<br/>
+<!-- $$$codeUrl -->
+<div class="qmlitem"><div class="qmlproto">
+<div class="table"><table class="qmlname">
+<tr valign="top" class="odd" id="codeUrl-prop">
+<td class="tblQmlPropNode"><p>
+<a name="codeUrl-prop"></a><span class="name">codeUrl</span> : <span class="type">var</span></p></td></tr>
+</table></div>
+</div><div class="qmldoc"><p>The applet binary file URL</p>
+</div></div><!-- @@@codeUrl -->
+<br/>
+<!-- $$$commands -->
+<div class="qmlitem"><div class="qmlproto">
+<div class="table"><table class="qmlname">
+<tr valign="top" class="odd" id="commands-prop">
+<td class="tblQmlPropNode"><p>
+<a name="commands-prop"></a><span class="name">commands</span> : <span class="type"><a href="qml-samba-appletcommand.html">AppletCommand</a></span></p></td></tr>
+</table></div>
+</div><div class="qmldoc"><p>List of all supported commands for this applet</p>
+</div></div><!-- @@@commands -->
+<br/>
+<!-- $$$connection -->
+<div class="qmlitem"><div class="qmlproto">
+<div class="table"><table class="qmlname">
+<tr valign="top" class="odd" id="connection-prop">
+<td class="tblQmlPropNode"><p>
+<a name="connection-prop"></a><span class="name">connection</span> : <span class="type">var</span></p></td></tr>
+</table></div>
+</div><div class="qmldoc"><p>the currently selected connection</p>
+</div></div><!-- @@@connection -->
+<br/>
+<!-- $$$description -->
+<div class="qmlitem"><div class="qmlproto">
+<div class="table"><table class="qmlname">
+<tr valign="top" class="odd" id="description-prop">
+<td class="tblQmlPropNode"><p>
+<a name="description-prop"></a><span class="name">description</span> : <span class="type">var</span></p></td></tr>
+</table></div>
+</div><div class="qmldoc"><p>The applet description</p>
+</div></div><!-- @@@description -->
+<br/>
+<!-- $$$device -->
+<div class="qmlitem"><div class="qmlproto">
+<div class="table"><table class="qmlname">
+<tr valign="top" class="odd" id="device-prop">
+<td class="tblQmlPropNode"><p>
+<a name="device-prop"></a><span class="name">device</span> : <span class="type">var</span></p></td></tr>
+</table></div>
+</div><div class="qmldoc"><p>The parent device for this applet</p>
+</div></div><!-- @@@device -->
+<br/>
+<!-- $$$entryAddr -->
+<div class="qmlitem"><div class="qmlproto">
+<div class="table"><table class="qmlname">
+<tr valign="top" class="odd" id="entryAddr-prop">
+<td class="tblQmlPropNode"><p>
+<a name="entryAddr-prop"></a><span class="name">entryAddr</span> : <span class="type">var</span></p></td></tr>
+</table></div>
+</div><div class="qmldoc"><p>The address of the applet entry point</p>
+</div></div><!-- @@@entryAddr -->
+<br/>
+<!-- $$$eraseSupport -->
+<div class="qmlitem"><div class="qmlproto">
+<div class="table"><table class="qmlname">
+<tr valign="top" class="odd" id="eraseSupport-prop">
+<td class="tblQmlPropNode"><p>
+<a name="eraseSupport-prop"></a><span class="name">eraseSupport</span> : <span class="type">var</span></p></td></tr>
+</table></div>
+</div><div class="qmldoc"><p>The supported memory erase sizes in pages This property contains a bitfield of the supported erase sizes. For example a memory with 512-bytes pages that supports 4KB (8 pages) and 32KB (64 pages) will report an erase support value of 72.</p>
+</div></div><!-- @@@eraseSupport -->
+<br/>
+<!-- $$$mailboxAddr -->
+<div class="qmlitem"><div class="qmlproto">
+<div class="table"><table class="qmlname">
+<tr valign="top" class="odd" id="mailboxAddr-prop">
+<td class="tblQmlPropNode"><p>
+<a name="mailboxAddr-prop"></a><span class="name">mailboxAddr</span> : <span class="type">var</span></p></td></tr>
+</table></div>
+</div><div class="qmldoc"><p>The address at which the applet mailbox is located</p>
+</div></div><!-- @@@mailboxAddr -->
+<br/>
+<!-- $$$memoryPages -->
+<div class="qmlitem"><div class="qmlproto">
+<div class="table"><table class="qmlname">
+<tr valign="top" class="odd" id="memoryPages-prop">
+<td class="tblQmlPropNode"><p>
+<a name="memoryPages-prop"></a><span class="name">memoryPages</span> : <span class="type">var</span></p></td></tr>
+</table></div>
+</div><div class="qmldoc"><p>The total memory size in pages</p>
+</div></div><!-- @@@memoryPages -->
+<br/>
+<!-- $$$memorySize -->
+<div class="qmlitem"><div class="qmlproto">
+<div class="table"><table class="qmlname">
+<tr valign="top" class="odd" id="memorySize-prop">
+<td class="tblQmlPropNode"><p>
+<a name="memorySize-prop"></a><span class="name">memorySize</span> : <span class="type">var</span></p></td></tr>
+</table></div>
+</div><div class="qmldoc"><p>The total memory size in bytes</p>
+</div></div><!-- @@@memorySize -->
+<br/>
+<!-- $$$name -->
+<div class="qmlitem"><div class="qmlproto">
+<div class="table"><table class="qmlname">
+<tr valign="top" class="odd" id="name-prop">
+<td class="tblQmlPropNode"><p>
+<a name="name-prop"></a><span class="name">name</span> : <span class="type">var</span></p></td></tr>
+</table></div>
+</div><div class="qmldoc"><p>The applet name</p>
+</div></div><!-- @@@name -->
+<br/>
+<!-- $$$nandHeader -->
+<div class="qmlitem"><div class="qmlproto">
+<div class="table"><table class="qmlname">
+<tr valign="top" class="odd" id="nandHeader-prop">
+<td class="tblQmlPropNode"><p>
+<a name="nandHeader-prop"></a><span class="name">nandHeader</span> : <span class="type">var</span></p></td></tr>
+</table></div>
+</div><div class="qmldoc"><p>Header value that will be added before the program code. Required by ROM-code to boot from NAND memory.</p>
+</div></div><!-- @@@nandHeader -->
+<br/>
+<!-- $$$paddingByte -->
+<div class="qmlitem"><div class="qmlproto">
+<div class="table"><table class="qmlname">
+<tr valign="top" class="odd" id="paddingByte-prop">
+<td class="tblQmlPropNode"><p>
+<a name="paddingByte-prop"></a><span class="name">paddingByte</span> : <span class="type">var</span></p></td></tr>
+</table></div>
+</div><div class="qmldoc"><p>The byte value that will be used to pad data when writing data that is not a round number of pages. Default is 0xff.</p>
+</div></div><!-- @@@paddingByte -->
+<br/>
+<!-- $$$pageSize -->
+<div class="qmlitem"><div class="qmlproto">
+<div class="table"><table class="qmlname">
+<tr valign="top" class="odd" id="pageSize-prop">
+<td class="tblQmlPropNode"><p>
+<a name="pageSize-prop"></a><span class="name">pageSize</span> : <span class="type">var</span></p></td></tr>
+</table></div>
+</div><div class="qmldoc"><p>The size of a page in bytes</p>
+</div></div><!-- @@@pageSize -->
+<br/>
+<!-- $$$trimPadding -->
+<div class="qmlitem"><div class="qmlproto">
+<div class="table"><table class="qmlname">
+<tr valign="top" class="odd" id="trimPadding-prop">
+<td class="tblQmlPropNode"><p>
+<a name="trimPadding-prop"></a><span class="name">trimPadding</span> : <span class="type">var</span></p></td></tr>
+</table></div>
+</div><div class="qmldoc"><p>If true, empty pages at end of an erase block will not be written. This feature is used for NAND memories and will only work if only one erase block size is supported.</p>
+</div></div><!-- @@@trimPadding -->
+<br/>
+<h2>Method Documentation</h2>
+<!-- $$$buildInitArgs -->
+<div class="qmlitem"><div class="qmlproto">
+<div class="table"><table class="qmlname">
+<tr valign="top" class="odd" id="buildInitArgs-method">
+<td class="tblQmlFuncNode"><p>
+<a name="buildInitArgs-method"></a><span class="type">void</span> <span class="name">buildInitArgs</span>()</p></td></tr>
+</table></div>
+</div><div class="qmldoc"><p>Returns the input mailbox for applet initialization</p>
+<p>The default implementation just calls <a href="qml-samba-applet.html#defaultInitArgs-method">defaultInitArgs</a>. It is intended to be overridden by Applet sub-classes/instances.</p>
+</div></div><!-- @@@buildInitArgs -->
+<br/>
+<!-- $$$command -->
+<div class="qmlitem"><div class="qmlproto">
+<div class="table"><table class="qmlname">
+<tr valign="top" class="odd" id="command-method">
+<td class="tblQmlFuncNode"><p>
+<a name="command-method"></a><span class="type"><a href="qml-samba-appletcommand.html">AppletCommand</a></span> <span class="name">command</span>(<span class="type">string</span> <i>name</i>)</p></td></tr>
+</table></div>
+</div><div class="qmldoc"><p>Retrieve a command from the list of supported commands. If the command name is not found, returns <i>undefined</i>.</p>
+</div></div><!-- @@@command -->
+<br/>
+<!-- $$$defaultInitArgs -->
+<div class="qmlitem"><div class="qmlproto">
+<div class="table"><table class="qmlname">
+<tr valign="top" class="odd" id="defaultInitArgs-method">
+<td class="tblQmlFuncNode"><p>
+<a name="defaultInitArgs-method"></a><span class="type">void</span> <span class="name">defaultInitArgs</span>()</p></td></tr>
+</table></div>
+</div><div class="qmldoc"><p>Returns the default input mailbox for applet initialization</p>
+<p>The default mailbox contains the connection type followed by the trace level. This method is called by the default <a href="qml-samba-applet.html#buildInitArgs-method">buildInitArgs</a> implementation.</p>
+</div></div><!-- @@@defaultInitArgs -->
+<br/>
+<!-- $$$erase -->
+<div class="qmlitem"><div class="qmlproto">
+<div class="table"><table class="qmlname">
+<tr valign="top" class="odd" id="erase-method">
+<td class="tblQmlFuncNode"><p>
+<a name="erase-method"></a><span class="type">void</span> <span class="name">erase</span>(<span class="type">int</span> <i>offset</i>, <span class="type">int</span> <i>size</i>)</p></td></tr>
+</table></div>
+</div><div class="qmldoc"><p>Erases a block of memory.</p>
+<p>Erases <i>size</i> bytes at offset <i>offset</i> using the applet 'block erase' command.</p>
+<p>Throws an <i>Error</i> if the applet has no block erase command or if an error occured during erasing</p>
+</div></div><!-- @@@erase -->
+<br/>
+<!-- $$$hasCommand -->
+<div class="qmlitem"><div class="qmlproto">
+<div class="table"><table class="qmlname">
+<tr valign="top" class="odd" id="hasCommand-method">
+<td class="tblQmlFuncNode"><p>
+<a name="hasCommand-method"></a><span class="type">bool</span> <span class="name">hasCommand</span>(<span class="type">string</span> <i>name</i>)</p></td></tr>
+</table></div>
+</div><div class="qmldoc"><p>Checks if a given command is supported by the applet.</p>
+</div></div><!-- @@@hasCommand -->
+<br/>
+<!-- $$$initialize -->
+<div class="qmlitem"><div class="qmlproto">
+<div class="table"><table class="qmlname">
+<tr valign="top" class="odd" id="initialize-method">
+<td class="tblQmlFuncNode"><p>
+<a name="initialize-method"></a><span class="type">void</span> <span class="name">initialize</span>()</p></td></tr>
+</table></div>
+</div><div class="qmldoc"><p>Load and initializes the applet.</p>
+<p>Throws an <i>Error</i> if the applet could not be loaded or initialized.</p>
+</div></div><!-- @@@initialize -->
+<br/>
+<!-- $$$prepareBootFile -->
+<div class="qmlitem"><div class="qmlproto">
+<div class="table"><table class="qmlname">
+<tr valign="top" class="odd" id="prepareBootFile-method">
+<td class="tblQmlFuncNode"><p>
+<a name="prepareBootFile-method"></a><span class="type">void</span> <span class="name">prepareBootFile</span>(<span class="type">File</span> <i>file</i>)</p></td></tr>
+</table></div>
+</div><div class="qmldoc"><p>Prepare a application file for use as a boot file</p>
+<p>The default implementation enables on-the-fly patching of 6th vector. It is intended to be overridden by Applet sub-classes/instances.</p>
+</div></div><!-- @@@prepareBootFile -->
+<br/>
+<!-- $$$read -->
+<div class="qmlitem"><div class="qmlproto">
+<div class="table"><table class="qmlname">
+<tr valign="top" class="odd" id="read-method">
+<td class="tblQmlFuncNode"><p>
+<a name="read-method"></a><span class="type">void</span> <span class="name">read</span>(<span class="type">int</span> <i>offset</i>, <span class="type">int</span> <i>size</i>, <span class="type">string</span> <i>fileName</i>)</p></td></tr>
+</table></div>
+</div><div class="qmldoc"><p>Read data from the device into a file.</p>
+<p>Reads <i>size</i> bytes at offset <i>offset</i> using the applet 'read' command and writes the data to a file named <i>fileName</i>.</p>
+<p>Throws an <i>Error</i> if the applet has no read command or if an error occured during reading</p>
+</div></div><!-- @@@read -->
+<br/>
+<!-- $$$verify -->
+<div class="qmlitem"><div class="qmlproto">
+<div class="table"><table class="qmlname">
+<tr valign="top" class="odd" id="verify-method">
+<td class="tblQmlFuncNode"><p>
+<a name="verify-method"></a><span class="type">void</span> <span class="name">verify</span>(<span class="type">int</span> <i>offset</i>, <span class="type">string</span> <i>fileName</i>, <span class="type">bool</span> <i>bootFile</i>)</p></td></tr>
+</table></div>
+</div><div class="qmldoc"><p>Compares data between a file and the device memory.</p>
+<p>Reads the contents of the file named <i>fileName</i> and compares it with memory at offset <i>offset</i> using the applet 'read' command.</p>
+<p>If <i>bootFile</i> is <code>true</code>, the file size will be written at offset 20 into the data before writing. This is required when the code is to be loaded by the ROM code.</p>
+<p>Throws an <i>Error</i> if the applet has no read command, if an error occured during reading or if the verification failed.</p>
+</div></div><!-- @@@verify -->
+<br/>
+<!-- $$$write -->
+<div class="qmlitem"><div class="qmlproto">
+<div class="table"><table class="qmlname">
+<tr valign="top" class="odd" id="write-method">
+<td class="tblQmlFuncNode"><p>
+<a name="write-method"></a><span class="type">void</span> <span class="name">write</span>(<span class="type">int</span> <i>offset</i>, <span class="type">string</span> <i>fileName</i>, <span class="type">bool</span> <i>bootFile</i>)</p></td></tr>
+</table></div>
+</div><div class="qmldoc"><p>Writes data from a file to the device.</p>
+<p>Reads the contents of the file named <i>fileName</i> and writes it at offset <i>offset</i> using the applet 'write' command.</p>
+<p>If <i>bootFile</i> is <code>true</code>, file data will be modified to be suitable for booting, as required by the device ROM-code.</p>
+<p>Throws an <i>Error</i> if the applet has no write command or if an error occured during writing or verifying.</p>
+</div></div><!-- @@@write -->
+<br/>
+<!-- $$$writeVerify -->
+<div class="qmlitem"><div class="qmlproto">
+<div class="table"><table class="qmlname">
+<tr valign="top" class="odd" id="writeVerify-method">
+<td class="tblQmlFuncNode"><p>
+<a name="writeVerify-method"></a><span class="type">void</span> <span class="name">writeVerify</span>(<span class="type">int</span> <i>offset</i>, <span class="type">string</span> <i>fileName</i>, <span class="type">bool</span> <i>bootFile</i>)</p></td></tr>
+</table></div>
+</div><div class="qmldoc"><p>Writes/Compares data from a file to the device memory.</p>
+<p>Reads the contents of the file named <i>fileName</i> and writes it at offset <i>offset</i> using the applet 'write' command. The data is then read back using the applet 'read' command and compared it with the expected data.</p>
+<p>If <i>bootFile</i> is <code>true</code>, the file size will be written at offset 20 into the data before writing. This is required when the code is to be loaded by the ROM code.</p>
+<p>Throws an <i>Error</i> if the applet has no read and write commands or if an error occured during reading, writing or verifying.</p>
+</div></div><!-- @@@writeVerify -->
+<br/>
+<p /><address><hr /><div align="center">
+<table width="100%" cellspacing="0" border="0"><tr class="address">
+<td width="60%" align="left">Copyright &copy; 2015-2017 Atmel Corporation</td>
+<td width="40%" align="right"><div align="right">SAM-BA Documentation</div></td>
+</tr></table></div></address></body>
+</html>

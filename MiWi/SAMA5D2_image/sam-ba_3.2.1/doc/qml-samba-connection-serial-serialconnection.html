@@ -1,0 +1,224 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<!-- SerialConnection.qml -->
+  <title>SerialConnection QML Type | SAM-BA 3.2</title>
+  <link rel="stylesheet" type="text/css" href="style/style.css" />
+</head>
+<table border="0" cellpadding="0" cellspacing="0" width="100%">
+<tr>
+<td class="postheader" valign="center"> <a href="index.html">Home</a> &middot; </td></tr></table><div class="sidebar">
+<div class="toc">
+<h3><a name="toc">Contents</a></h3>
+<ul>
+<li class="level1"><a href="#properties">Properties</a></li>
+<li class="level1"><a href="#methods">Methods</a></li>
+<li class="level1"><a href="#details">Detailed Description</a></li>
+</ul>
+</div>
+<div class="sidebar-content" id="sidebar-content"></div></div>
+<h1 class="title">SerialConnection QML Type</h1>
+<span class="subtitle"></span>
+<!-- $$$SerialConnection-brief -->
+<p><a href="qml-samba-connection-serial-serialconnection.html">SerialConnection</a> represents a serial connection to a programmable device, either via RS232 or USB. <a href="#details">More...</a></p>
+<!-- @@@SerialConnection -->
+<div class="table"><table class="alignedsummary">
+<tr><td class="memItemLeft rightAlign topAlign"> Import Statement:</td><td class="memItemRight bottomAlign"> import SAMBA.Connection.Serial 3.2</td></tr><tr><td class="memItemLeft rightAlign topAlign"> Inherits:</td><td class="memItemRight bottomAlign"> <p><a href="qml-samba-connection.html">Connection</a></p>
+</td></tr></table></div><ul>
+<li><a href="qml-samba-connection-serial-serialconnection-members.html">List of all members, including inherited members</a></li>
+</ul>
+<a name="properties"></a>
+<h2 id="properties">Properties</h2>
+<ul>
+<li class="fn"><b><b><a href="qml-samba-connection-serial-serialconnection.html#baudRate-prop">baudRate</a></b></b> : int</li>
+<li class="fn"><b><b><a href="qml-samba-connection-serial-serialconnection.html#maxChunkSize-prop">maxChunkSize</a></b></b> : var</li>
+<li class="fn"><b><b><a href="qml-samba-connection-serial-serialconnection.html#port-prop">port</a></b></b> : string</li>
+</ul>
+<a name="methods"></a>
+<h2 id="methods">Methods</h2>
+<ul>
+<li class="fn"><b><b><a href="qml-samba-connection-serial-serialconnection.html#close-method">close</a></b></b>()</li>
+<li class="fn"><b><b><a href="qml-samba-connection-serial-serialconnection.html#go-method">go</a></b></b>(<i>address</i>)</li>
+<li class="fn"><b><b><a href="qml-samba-connection-serial-serialconnection.html#open-method">open</a></b></b>()</li>
+<li class="fn"><b><b><a href="qml-samba-connection-serial-serialconnection.html#read-method">read</a></b></b>(<i>address</i>, <i>length</i>, <i>timeout</i>)</li>
+<li class="fn"><b><b><a href="qml-samba-connection-serial-serialconnection.html#readu8-method">readu8</a></b></b>(<i>address</i>, <i>timeout</i>)</li>
+<li class="fn"><b><b><a href="qml-samba-connection-serial-serialconnection.html#readu16-method">readu16</a></b></b>(<i>address</i>, <i>timeout</i>)</li>
+<li class="fn"><b><b><a href="qml-samba-connection-serial-serialconnection.html#readu32-method">readu32</a></b></b>(<i>address</i>, <i>timeout</i>)</li>
+<li class="fn"><b><b><a href="qml-samba-connection-serial-serialconnection.html#waitForMonitor-method">waitForMonitor</a></b></b>(<i>timeout</i>)</li>
+<li class="fn"><b><b><a href="qml-samba-connection-serial-serialconnection.html#write-method">write</a></b></b>(<i>address</i>, <i>data</i>)</li>
+<li class="fn"><b><b><a href="qml-samba-connection-serial-serialconnection.html#writeu8-method">writeu8</a></b></b>(<i>address</i>, <i>data</i>)</li>
+<li class="fn"><b><b><a href="qml-samba-connection-serial-serialconnection.html#writeu16-method">writeu16</a></b></b>(<i>address</i>, <i>data</i>)</li>
+<li class="fn"><b><b><a href="qml-samba-connection-serial-serialconnection.html#writeu32-method">writeu32</a></b></b>(<i>address</i>, <i>data</i>)</li>
+</ul>
+<!-- $$$SerialConnection-description -->
+<a name="details"></a>
+<h2 id="details">Detailed Description</h2>
+<p><a href="qml-samba-connection-serial-serialconnection.html">SerialConnection</a> can be used to connect to the SAM-BA Monitor included in the ROM Code of most Atmel MPUs and MCUs.</p>
+<p>The device must be waiting for commands in SAM-BA Monitor mode. This is usually done by either erasing the device (for devices that have an internal flash and a dedicated ERASE pin), or by disabling the chip-select of the external memories. Please see the datasheets and manuals of the device and board for more details.</p>
+<p>This <a href="qml-samba-connection.html">SAMBA::Connection</a> implementation supports both direct USB connection to the SAM-BA Monitor and access through the console UART. The console UART is device-specific (for example DBGU for SAMA5D4) and may be configurable (on SAMA5D2, the console can be changed using the boot config word and/or fuses). Please see the datasheet of the device for more details.</p>
+<!-- @@@SerialConnection -->
+<h2>Property Documentation</h2>
+<!-- $$$baudRate -->
+<div class="qmlitem"><div class="qmlproto">
+<div class="table"><table class="qmlname">
+<tr valign="top" class="odd" id="baudRate-prop">
+<td class="tblQmlPropNode"><p>
+<a name="baudRate-prop"></a><span class="name">baudRate</span> : <span class="type">int</span></p></td></tr>
+</table></div>
+</div><div class="qmldoc"><p>The serial baud rate to use for the connection.</p>
+<p>If the requested baudrate is not supported, the closest supported one will be used. When connected directly to the AT91 CDC ACM USB port, the baudrate is ignored.</p>
+</div></div><!-- @@@baudRate -->
+<br/>
+<!-- $$$maxChunkSize -->
+<div class="qmlitem"><div class="qmlproto">
+<div class="table"><table class="qmlname">
+<tr valign="top" class="odd" id="maxChunkSize-prop">
+<td class="tblQmlPropNode"><p>
+<a name="maxChunkSize-prop"></a><span class="name">maxChunkSize</span> : <span class="type">var</span></p></td></tr>
+</table></div>
+</div><div class="qmldoc"><p>The maximum size of the data chunks when reading from the device</p>
+<p>Some platforms have limitations on the maximum amount of data that can be transferred in a single chunk on the serial device. This property allows some control on the way the read transfers are split.</p>
+<p>The default value should be suitable for most cases.</p>
+</div></div><!-- @@@maxChunkSize -->
+<br/>
+<!-- $$$port -->
+<div class="qmlitem"><div class="qmlproto">
+<div class="table"><table class="qmlname">
+<tr valign="top" class="odd" id="port-prop">
+<td class="tblQmlPropNode"><p>
+<a name="port-prop"></a><span class="name">port</span> : <span class="type">string</span></p></td></tr>
+</table></div>
+</div><div class="qmldoc"><p>The port to use for the connection</p>
+<p>For Windows, port have the form &quot;COMxx&quot; where <i>xx</i> is the number assigned to the port, for example &quot;COM2&quot; or &quot;COM84&quot;.</p>
+<p>For Linux, use the device name without its &quot;/dev/&quot; prefix, i.e&#x2e; for &quot;/dev/ttyACM0&quot;, use &quot;ttyACM0&quot;.</p>
+</div></div><!-- @@@port -->
+<br/>
+<h2>Method Documentation</h2>
+<!-- $$$close -->
+<div class="qmlitem"><div class="qmlproto">
+<div class="table"><table class="qmlname">
+<tr valign="top" class="odd" id="close-method">
+<td class="tblQmlFuncNode"><p>
+<a name="close-method"></a><span class="name">close</span>()</p></td></tr>
+</table></div>
+</div><div class="qmldoc"><p><b>See also </b><a href="qml-samba-connection.html#close-method">Connection::close()</a>.</p>
+</div></div><!-- @@@close -->
+<br/>
+<!-- $$$go -->
+<div class="qmlitem"><div class="qmlproto">
+<div class="table"><table class="qmlname">
+<tr valign="top" class="odd" id="go-method">
+<td class="tblQmlFuncNode"><p>
+<a name="go-method"></a><span class="name">go</span>(<i>address</i>)</p></td></tr>
+</table></div>
+</div><div class="qmldoc"><p><b>See also </b><a href="qml-samba-connection.html#go-method">Connection::go()</a>.</p>
+</div></div><!-- @@@go -->
+<br/>
+<!-- $$$open -->
+<div class="qmlitem"><div class="qmlproto">
+<div class="table"><table class="qmlname">
+<tr valign="top" class="odd" id="open-method">
+<td class="tblQmlFuncNode"><p>
+<a name="open-method"></a><span class="name">open</span>()</p></td></tr>
+</table></div>
+</div><div class="qmldoc"><p><b>See also </b><a href="qml-samba-connection.html#open-method">Connection::open()</a>.</p>
+</div></div><!-- @@@open -->
+<br/>
+<!-- $$$read -->
+<div class="qmlitem"><div class="qmlproto">
+<div class="table"><table class="qmlname">
+<tr valign="top" class="odd" id="read-method">
+<td class="tblQmlFuncNode"><p>
+<a name="read-method"></a><span class="name">read</span>(<i>address</i>, <i>length</i>, <i>timeout</i>)</p></td></tr>
+</table></div>
+</div><div class="qmldoc"><p><b>See also </b><a href="qml-samba-connection.html#read-method">Connection::read()</a>.</p>
+</div></div><!-- @@@read -->
+<br/>
+<!-- $$$readu8 -->
+<div class="qmlitem"><div class="qmlproto">
+<div class="table"><table class="qmlname">
+<tr valign="top" class="odd" id="readu8-method">
+<td class="tblQmlFuncNode"><p>
+<a name="readu8-method"></a><span class="name">readu8</span>(<i>address</i>, <i>timeout</i>)</p></td></tr>
+</table></div>
+</div><div class="qmldoc"><p><b>See also </b><a href="qml-samba-connection.html#readu8-method">Connection::readu8()</a>.</p>
+</div></div><!-- @@@readu8 -->
+<br/>
+<!-- $$$readu16 -->
+<div class="qmlitem"><div class="qmlproto">
+<div class="table"><table class="qmlname">
+<tr valign="top" class="odd" id="readu16-method">
+<td class="tblQmlFuncNode"><p>
+<a name="readu16-method"></a><span class="name">readu16</span>(<i>address</i>, <i>timeout</i>)</p></td></tr>
+</table></div>
+</div><div class="qmldoc"><p><b>See also </b><a href="qml-samba-connection.html#readu16-method">Connection::readu16()</a>.</p>
+</div></div><!-- @@@readu16 -->
+<br/>
+<!-- $$$readu32 -->
+<div class="qmlitem"><div class="qmlproto">
+<div class="table"><table class="qmlname">
+<tr valign="top" class="odd" id="readu32-method">
+<td class="tblQmlFuncNode"><p>
+<a name="readu32-method"></a><span class="name">readu32</span>(<i>address</i>, <i>timeout</i>)</p></td></tr>
+</table></div>
+</div><div class="qmldoc"><p><b>See also </b><a href="qml-samba-connection.html#readu32-method">Connection::readu32()</a>.</p>
+</div></div><!-- @@@readu32 -->
+<br/>
+<!-- $$$waitForMonitor -->
+<div class="qmlitem"><div class="qmlproto">
+<div class="table"><table class="qmlname">
+<tr valign="top" class="odd" id="waitForMonitor-method">
+<td class="tblQmlFuncNode"><p>
+<a name="waitForMonitor-method"></a><span class="name">waitForMonitor</span>(<i>timeout</i>)</p></td></tr>
+</table></div>
+</div><div class="qmldoc"><p><b>See also </b><a href="qml-samba-connection.html#waitForMonitor-method">Connection::waitForMonitor()</a>.</p>
+</div></div><!-- @@@waitForMonitor -->
+<br/>
+<!-- $$$write -->
+<div class="qmlitem"><div class="qmlproto">
+<div class="table"><table class="qmlname">
+<tr valign="top" class="odd" id="write-method">
+<td class="tblQmlFuncNode"><p>
+<a name="write-method"></a><span class="name">write</span>(<i>address</i>, <i>data</i>)</p></td></tr>
+</table></div>
+</div><div class="qmldoc"><p><b>See also </b><a href="qml-samba-connection.html#write-method">Connection::write()</a>.</p>
+</div></div><!-- @@@write -->
+<br/>
+<!-- $$$writeu8 -->
+<div class="qmlitem"><div class="qmlproto">
+<div class="table"><table class="qmlname">
+<tr valign="top" class="odd" id="writeu8-method">
+<td class="tblQmlFuncNode"><p>
+<a name="writeu8-method"></a><span class="name">writeu8</span>(<i>address</i>, <i>data</i>)</p></td></tr>
+</table></div>
+</div><div class="qmldoc"><p><b>See also </b><a href="qml-samba-connection.html#writeu8-method">Connection::writeu8()</a>.</p>
+</div></div><!-- @@@writeu8 -->
+<br/>
+<!-- $$$writeu16 -->
+<div class="qmlitem"><div class="qmlproto">
+<div class="table"><table class="qmlname">
+<tr valign="top" class="odd" id="writeu16-method">
+<td class="tblQmlFuncNode"><p>
+<a name="writeu16-method"></a><span class="name">writeu16</span>(<i>address</i>, <i>data</i>)</p></td></tr>
+</table></div>
+</div><div class="qmldoc"><p><b>See also </b><a href="qml-samba-connection.html#writeu16-method">Connection::writeu16()</a>.</p>
+</div></div><!-- @@@writeu16 -->
+<br/>
+<!-- $$$writeu32 -->
+<div class="qmlitem"><div class="qmlproto">
+<div class="table"><table class="qmlname">
+<tr valign="top" class="odd" id="writeu32-method">
+<td class="tblQmlFuncNode"><p>
+<a name="writeu32-method"></a><span class="name">writeu32</span>(<i>address</i>, <i>data</i>)</p></td></tr>
+</table></div>
+</div><div class="qmldoc"><p><b>See also </b><a href="qml-samba-connection.html#writeu32-method">Connection::writeu32()</a>.</p>
+</div></div><!-- @@@writeu32 -->
+<br/>
+<p /><address><hr /><div align="center">
+<table width="100%" cellspacing="0" border="0"><tr class="address">
+<td width="60%" align="left">Copyright &copy; 2015-2017 Atmel Corporation</td>
+<td width="40%" align="right"><div align="right">SAM-BA Documentation</div></td>
+</tr></table></div></address></body>
+</html>

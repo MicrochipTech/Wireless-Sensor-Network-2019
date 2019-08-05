@@ -1,0 +1,5 @@
+module SAMBA.Connection.JLink
+depends SAMBA 3.2
+plugin samba_conn_jlink
+classname SambaConnectionJLinkPlugin
+JLinkConnection 3.2 JLinkConnection.qml
