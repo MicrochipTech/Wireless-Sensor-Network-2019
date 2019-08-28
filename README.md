@@ -633,6 +633,7 @@ XXXX denotes your Application Name chosen
 ## MiWi
 
 **Introduction**
+
 MiWi stands for Microchip Wireless. MiWi is a proprietary wireless protocols designed by Microchip Technology that use small, low-power digital radios based on the IEEE 802.15.4 standard for wireless personal area networks (WPANs). It is designed for low data transmission rates and short distance, cost constrained networks, such as industrial monitoring and control, home and building automation, remote control, low-power wireless sensors, lighting control and automated meter reading.
 MiWi protocol supports three network topologies
 - Peer to Peer (P2P)
