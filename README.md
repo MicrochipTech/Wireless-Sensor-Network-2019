@@ -1,4 +1,4 @@
-# Microchip Wireless Sensor Network
+# Microchip Wireless Sensor Network -2019
 Create a Wi-Fi/ MiWi (15.4) / LoRa wireless sensor network to monitor the temperatures covering a wide area like a hotel or a plant. 
 
 Case study: Classrooms temperature monitoring during Microchip MASTERS conference held at JW Marriot desert ridge, AZ
@@ -580,7 +580,9 @@ XXXX denotes users Application Name
 		}
 10.  After configuring the decoder and programming the board with the Application Source code. The App data should start appearing in terminal window and on the Things Network Console
 ![](https://i.imgur.com/SpqHM6k.png)
+
 Subsequent sensor transmissions happen every 15 mins
+
 11. Application data on cosole can be controlled and monitored via Application Server Integration. The things network provides this service
 ![](https://i.imgur.com/JOOUuns.png)
  
