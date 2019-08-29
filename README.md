@@ -1,5 +1,5 @@
 # Microchip Wireless Sensor Network -2019
-Create a Wi-Fi/ MiWi (15.4) / LoRa wireless sensor network to monitor the temperatures covering a wide area like a hotel or a plant. 
+Create a Wi-Fi/ MiWi (15.4) / LoRaWAN wireless sensor network to monitor the temperatures covering a wide area like a hotel or a plant. 
 
 Case study: Classrooms temperature monitoring during Microchip MASTERS conference held at JW Marriot desert ridge, AZ
 
@@ -61,7 +61,13 @@ https://img.shields.io/github/stars/MicrochipTech/Wireless-Sensor-Network.svg)
       - [sleep code and duration](#sleep-code-and-duration)
       - [MQTT client ID](#mqtt-client-id)
       - [Running the code](#running-the-code)
-  * [LoRa](#lora)
+  * [LoRaWAN](#lorawan)
+    + [Introduction](#introduction)
+    + [Advantages of LoRaWAN](#advantages-of-lorawan)
+    + [Demo Introduction](#demo-introduction)
+    + [Hardware](#hardware-required)
+    + [Software](#software)
+    + [Step by Step Procedure to replicate Demo](#step-by-step-procedure-to-replicate-demo)
     + [Registration Links](#registration-links)
   * [MiWi](#miwi)
 
@@ -497,13 +503,12 @@ You have to enter the MQTT client ID to be similar to the subject ID in your dev
 That's pretty much it, now go to main.c file, read the main function and get familiar with it and when you're ready, build and Flash the SAML21 with the code. 
 
 If you are logged into the AWS test consle ans subscribing to the Wi-Fi topic mentioned above (/Microchip/WSN_Demo/WiFi) you should see a new message received once the board runs.
-## LoRa
+## LoRaWAN
 
-**Introduction**
-LoRa stands for Long Range. LoRaWAN stands for Long Range Wide Area Networks. LoRaWAN is the network on which LoRa operates. LoRaWAN is a media access control (MAC) layer protocol but mainly is a network layer protocol for managing communication between LPWAN gateways and end-node devices as a routing protocol, maintained by the LoRa Alliance. Version 1.0 of the LoRaWAN specification
-Some of the  applications that can be accomplished using LoRa are Smart parking and vehicle management, Facilities and infrastructure management, Fire detection and management, Waste management, Home automation for IoT enables smart appliances, Smart farming and livestock management, Temperature and moisture monitoring, Water level sensors and irrigation control.
+###Introduction
+LoRa stands for Long Range. LoRaWAN stands for Long Range Wide Area Networks. LoRaWAN is the network on which LoRa operates. LoRaWAN is a media access control (MAC) layer protocol but mainly is a network layer protocol for managing communication between LPWAN gateways and end-node devices as a routing protocol, maintained by the LoRa Alliance. Some of the  applications that can be accomplished using LoRa are Smart parking and vehicle management, Facilities and infrastructure management, Fire detection and management, Waste management, Home automation for IoT enables smart appliances, Smart farming and livestock management, Temperature and moisture monitoring, Water level sensors and irrigation control.
 
-**Advantages of LoRaWAN**
+###Advantages of LoRaWAN
 - Long battery life due to low power consumption
 - Low cost implementation due to low cost hardware and unlicensed spectrum
 - Long range coverage and in-building penetration
@@ -512,29 +517,30 @@ Some of the  applications that can be accomplished using LoRa are Smart parking 
 - Ease of access and connectivity to the cloud applications
 - Remote management and control access
 
-**Demo Introduction**
+###Demo Introduction
 Temperature of rooms spread across a huge resort was monitored using the LoRa.
 A typical LoRa Application can be developed by having 4 components
 End Device, Gateway, Network Server and Application Server.
 End Device with Temperature sensor (running on batteries) was used to demonstrate the advantages of LoRaWAN such as low power, secure and long range.
-Users who are new to developing applications using LoRaWAN can find overview of LoRaWAN [here](https://www.thethingsnetwork.org/docs/lorawan/ "here"). 
+Users who are new to developing applications using LoRaWAN can find overview of LoRaWAN System Architecture [here](https://www.thethingsnetwork.org/docs/lorawan/ "here"). 
 
 
-**Hardware**
-- End Device used for this demo [SAMR34 Xplained Pro Evaluation Kit](https://www.microchip.com/DevelopmentTools/ProductDetails/dm320111 "SAMR34 Xplained Pro Evaluation Kit")
+###Hardware
+- End Device used for this demo [SAMR34 Xplained Pro Evaluation Kit](https://www.microchip.com/DevelopmentTools/ProductDetails/dm320111 "SAMR34 Xplained Pro Evaluation Kit") - 1
 - Gateway used was the [The Things Gateway](http://thethingsproducts.com/#the-things-product-buy "The Things Gateway")
 - Internet Connectivity
-- Battery Pack with 3 AAA 1.5V batteries to Power the end device using J100 5V0_IN and GND on the end device
-- Female-Female Jumper wire shorting PA15 to GND
-- [I/O1 Xplained Pro Extension kit](https://www.microchip.com/DevelopmentTools/ProductDetails/ATIO1-XPRO "I/O1 Xplained Pro Extension kit") (Temperature Sensor)
+- micro USB Cable - 1
+- Battery Pack with 3 AAA 1.5V batteries to Power the end device using J100 5V0_IN and GND on the end device - 1
+- Female-Female Jumper wire shorting PA15 to GND - 1
+- [I/O1 Xplained Pro Extension kit](https://www.microchip.com/DevelopmentTools/ProductDetails/ATIO1-XPRO "I/O1 Xplained Pro Extension kit") (Temperature Sensor) - 1
 
-**Software**
+###Software
 - Network Server used was the [The Things Network](https://console.thethingsnetwork.org/ "The Things Network")
 - Application Server used was Flask Application, python script subscribed to The Things Network - Network Server
 - [Atmel Studio 7 ](https://www.microchip.com/mplab/avr-support/atmel-studio-7 "Atmel Studio 7 ")and above IDE
 - ASF 3.47 and above
 
-**Step by Step Procedure to replicate Demo**
+###Step by Step Procedure to replicate Demo
 1. Ensure the Gateway is connected to The Things Network Server - Steps mentioned [here](https://www.thethingsnetwork.org/docs/gateways/gateway/ "here")
 2. Once the Gateway is online, "Create an Application" followed by "Create a new device" 
 section for registering the application and end device to TTN
@@ -586,7 +592,7 @@ Subsequent sensor transmissions happen every 15 mins
 11. Application data on cosole can be controlled and monitored via Application Server Integration. The things network provides this service
 ![](https://i.imgur.com/JOOUuns.png)
  
-## #  Registration Links
+###Registration Links
 - [The Things Gateway Registration](https://www.thethingsnetwork.org/docs/gateways/gateway/ "**The Things Gateway Registration**")
 - [Application Registration](https://www.thethingsnetwork.org/docs/applications/add.html "Application Registration")
 - [Device Registration ](https://www.thethingsnetwork.org/docs/devices/registration.html "Device Registration ")
